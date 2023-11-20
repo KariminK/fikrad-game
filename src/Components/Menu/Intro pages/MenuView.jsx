@@ -2,7 +2,8 @@ import logoAnimation from "../../../assets/logos/gameLogoAnim.gif";
 import { useState } from "react";
 import RulesDialog from "../Dialog boxes/Rules dialog/RulesDialog";
 import AboutDialog from "../Dialog boxes/About dialog/AboutDialog";
-const MenuView = () => {
+import MenuButton from "../Button/MenuButton";
+const MenuView = ({ onPlayGame }) => {
   const [openRules, setOpenRules] = useState(false);
   const [openAbout, setOpenAbout] = useState(false);
   const changeOpenRules = () =>
@@ -15,13 +16,9 @@ const MenuView = () => {
         <img src={logoAnimation} alt="" id="gameLogo" />
       </div>
       <div className="menubtns">
-        <button className="menuBtn">Graj</button>
-        <button className="menuBtn" id="openRules" onClick={changeOpenRules}>
-          Zasady
-        </button>
-        <button className="menuBtn" onClick={changeOpenAbout}>
-          O twórcach
-        </button>
+        <MenuButton text={"Graj"} onButtonClick={onPlayGame} />
+        <MenuButton text={"Zasady"} onButtonClick={changeOpenRules} />
+        <MenuButton text={"O twórcach"} onButtonClick={changeOpenAbout} />
       </div>
       {openRules ? <RulesDialog closeRulesHandle={changeOpenRules} /> : ""}
       {openAbout ? <AboutDialog onCloseAbout={changeOpenAbout} /> : ""}

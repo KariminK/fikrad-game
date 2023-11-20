@@ -3,8 +3,8 @@ import CompView from "./Intro pages/CompView";
 import MenuView from "./Intro pages/MenuView";
 import TeamView from "./Intro pages/TeamView";
 import { useState, useEffect } from "react";
-const Menu = () => {
-  const [currentView, setCurrentView] = useState(1);
+const Menu = ({ onPlayGame }) => {
+  const [currentView, setCurrentView] = useState(0);
   useEffect(() => {
     setTimeout(() => {
       setCurrentView(1);
@@ -19,7 +19,7 @@ const Menu = () => {
     case 1:
       return <CompView />;
     case 2:
-      return <MenuView />;
+      return <MenuView onPlayGame={onPlayGame} />;
     default:
       return <h1>404 not found</h1>;
   }
