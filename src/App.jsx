@@ -1,18 +1,32 @@
 import { useState } from "react";
 import Menu from "./Components/Menu/Menu";
 import ChooseCharacter from "./Components/ChooseCharacter/ChooseCharacter";
+import Game from "./Components/Game/Game";
 function App() {
-  const [isGameOn, setIsGameOn] = useState(false);
+  const [view, setView] = useState(0);
+  const [selectedCharacter, setSelectedCharacter] = useState(1);
   const playGameHandle = () => {
-    setIsGameOn(true);
+    setView(1);
   };
-  if (!isGameOn)
-    return (
-      <>
-        <Menu onPlayGame={playGameHandle} />
-      </>
-    );
-  else return <ChooseCharacter />;
+  const selectCharacterHandle = (e, characterNum) => {
+    switch (characterNum) {
+      case "I":
+        setSelectedCharacter(1);
+        break;
+      case "II":
+        setSelectedCharacter(2);
+        break;
+      case "III":
+        setSelectedCharacter(3);
+        break;
+    }
+    console.log("ok");
+    setView(2);
+  };
+  if (view === 0) return <Menu onPlayGame={playGameHandle} />;
+  else if (view === 1)
+    return <ChooseCharacter onChooseCharacter={selectCharacterHandle} />;
+  else if (view === 2) return <Game selectedCharacter={selectedCharacter} />;
 }
 
 export default App;

@@ -1,0 +1,10 @@
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 36px;
+  color: white;
+  text-shadow: 5px white;
+}
