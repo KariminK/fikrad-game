@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import "./dialog.css";
 const Dialog = ({ speakingCharacter, text, options, dialNum }) => {
+  useEffect(() => {}, []);
   return (
     <div className="dialog">
       <div className="dialogBox">
