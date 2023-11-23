@@ -1,5 +1,5 @@
 import "./dialog.css";
-const Dialog = ({ speakingCharacter, text, options }) => {
+const Dialog = ({ speakingCharacter, text, options, dialNum }) => {
   return (
     <div className="dialog">
       <div className="dialogBox">

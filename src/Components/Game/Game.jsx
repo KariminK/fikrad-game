@@ -8,7 +8,7 @@ import typeSound from "../../assets/sounds/type.mp3";
 import DIALOG_DATA from "../../data/dialogs.json";
 import introTexts from "../../data/introTexts.json";
 const Game = ({ selectedCharacter }) => {
-  const [scene, setScene] = useState(1);
+  const [scene, setScene] = useState(0);
   const [chars, setChars] = useState(0);
   const [introTextIndex, setIntroTextIndex] = useState(0);
   const [dialNum, setDialNum] = useState(0);
@@ -34,7 +34,7 @@ const Game = ({ selectedCharacter }) => {
         setChars(chars + 1);
       } else if (
         introTexts[introTextIndex] &&
-        chars === introTexts[introTextIndex].length + 10
+        chars === introTexts[introTextIndex].length + 20
       ) {
         setIntroTextIndex(introTextIndex + 1);
         setChars(0);
@@ -50,7 +50,7 @@ const Game = ({ selectedCharacter }) => {
   };
 
   useEffect(() => {
-    let timeoutid = setTimeout(handleIntro, 100);
+    let timeoutid = setTimeout(handleIntro, 50);
     return () => clearTimeout(timeoutid);
   }, [chars]);
 
@@ -62,6 +62,7 @@ const Game = ({ selectedCharacter }) => {
         speakingCharacter={dialogs[dialNum].speakingCharacter}
         text={dialogs[dialNum].text}
         options={dialogs[dialNum].options}
+        dialNum={dialNum}
       />
     );
 };
