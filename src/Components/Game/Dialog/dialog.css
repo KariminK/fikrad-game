@@ -1,0 +1,51 @@
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/src/assets/backgrounds/teamMenuBg.jpg");
+  animation: fadein 1s linear;
+}
+.dialogBox {
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 60px);
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  color: white;
+  margin: 30px;
+  font-size: 38px;
+  letter-spacing: -1px;
+  padding: 30px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.dial {
+  width: 100%;
+}
+.dialog h1 {
+  text-align: left;
+}
+.options button {
+  background-color: transparent;
+  border: 5px solid rgb(43, 0, 100);
+  border-radius: 10px;
+  color: white;
+  margin: 10px;
+  padding: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: scale 200ms;
+}
+.options button:hover {
+  scale: 1.1;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

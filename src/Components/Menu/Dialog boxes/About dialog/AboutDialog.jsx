@@ -3,7 +3,7 @@ import teamLogo from "../../../../assets/logos/logo wgw company.png";
 import MenuButton from "../../Button/MenuButton";
 const AboutDialog = ({ onCloseAbout }) => {
   return (
-    <div className="dialog">
+    <div className="menuDialogBox">
       <img src={teamLogo} alt="Hot water company" />
       <ul>
         <li>Kacper Błoszko - kod gry</li>

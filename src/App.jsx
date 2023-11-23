@@ -20,7 +20,6 @@ function App() {
         setSelectedCharacter(3);
         break;
     }
-    console.log("ok");
     setView(2);
   };
   if (view === 0) return <Menu onPlayGame={playGameHandle} />;

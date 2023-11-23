@@ -1,0 +1,40 @@
+[
+  {
+    "speakingCharacter": "???",
+    "text": "Pewnie się zastanawiasz po co cię tu przywiozłem",
+    "options": [
+      {
+        "text": "Odwal się",
+        "nextDialIndex": 1
+      },
+      {
+        "text": "Czego chcesz",
+        "nextDialIndex": 2
+      }
+    ]
+  },
+  {
+    "speakingCharacter": "???",
+    "text": "Nie odzywaj się",
+    "options": [
+      {
+        "text": "Ok",
+        "nextDialIndex": 3
+      }
+    ]
+  },
+  {
+    "speakingCharacter": "???",
+    "text": "Jestem z organizacji fikrad, która konkuruje z ecpu",
+    "options": [
+      {
+        "text": "Ja nie wiedzioł",
+        "nextDialIndex": 4
+      },
+      {
+        "text": "Ja nie chcioł",
+        "nextDialIndex": 5
+      }
+    ]
+  }
+]

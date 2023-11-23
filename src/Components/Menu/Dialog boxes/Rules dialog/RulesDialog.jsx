@@ -2,7 +2,7 @@ import "../dialog.css";
 import MenuButton from "../../Button/MenuButton";
 const RulesDialog = ({ closeRulesHandle }) => {
   return (
-    <div className="dialog">
+    <div className="menuDialogBox">
       <h2>Zasady:</h2>
       <ol>
         <li>nie czituj</li>
