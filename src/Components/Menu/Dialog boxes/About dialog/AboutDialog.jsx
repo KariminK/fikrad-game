@@ -1,4 +1,4 @@
-import "../dialog.css";
+import "../menuDialog.css";
 import teamLogo from "../../../../assets/logos/logo wgw company.png";
 import MenuButton from "../../Button/MenuButton";
 const AboutDialog = ({ onCloseAbout }) => {

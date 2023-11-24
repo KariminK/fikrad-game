@@ -12,18 +12,24 @@ const Game = ({ selectedCharacter }) => {
   const [chars, setChars] = useState(0);
   const [introTextIndex, setIntroTextIndex] = useState(0);
   const [dialNum, setDialNum] = useState(0);
-
+  const [nick, setNick] = useState("");
   const punch = new AsyncAudio(punchSound);
   const type = new AsyncAudio(typeSound);
   const dialogs = DIALOG_DATA.map((dialog) => {
+    let nextDial;
+    if (dialog.type === "text") {
+      nextDial = dialog.answers;
+    }
     return {
       ...dialog,
-      options: dialog.options.map(({ text, nextDialIndex }) => {
-        return {
-          text,
-          result: () => setDialNum(nextDialIndex),
-        };
-      }),
+      options: dialog.options
+        ? dialog.options.map(({ text, nextDialIndex }) => {
+            return {
+              text,
+              result: () => setDialNum(nextDialIndex),
+            };
+          })
+        : nextDial,
     };
   });
   const handleIntro = async () => {
@@ -48,20 +54,34 @@ const Game = ({ selectedCharacter }) => {
       setScene(1);
     }
   };
-
   useEffect(() => {
     let timeoutid = setTimeout(handleIntro, 50);
     return () => clearTimeout(timeoutid);
   }, [chars]);
+
+  const handleNeutralAnswer = (text, nextDial, dialID) => {
+    if (dialID === "INSERT_NICK") {
+      setNick(text);
+      setDialNum(nextDial);
+    }
+  };
+  const handleAnswer = (text, nextDial, dialID) => {
+    setDialNum(nextDial);
+  };
 
   if (scene === 0)
     return <Intro texts={introTexts} index={introTextIndex} chars={chars} />;
   else if (scene === 1)
     return (
       <Dialog
+        type={dialogs[dialNum].type}
         speakingCharacter={dialogs[dialNum].speakingCharacter}
         text={dialogs[dialNum].text}
         options={dialogs[dialNum].options}
+        onNonNeutralAnswer={handleAnswer}
+        onNeutralAnswer={handleNeutralAnswer}
+        id={dialogs[dialNum].id}
+        nick={nick}
         dialNum={dialNum}
       />
     );

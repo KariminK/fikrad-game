@@ -1,39 +1,70 @@
 [
   {
+    "type": "normal",
     "speakingCharacter": "???",
     "text": "Pewnie się zastanawiasz po co cię tu przywiozłem",
     "options": [
       {
-        "text": "Odwal się",
-        "nextDialIndex": 1
-      },
-      {
         "text": "Czego chcesz",
+        "nextDialIndex": 1
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "speakingCharacter": "???",
+    "id": "INSERT_NICK",
+    "text": "Na początku powiedz mi... kim jesteś?",
+    "answers": [
+      {
+        "text": "",
         "nextDialIndex": 2
       }
     ]
   },
   {
+    "type": "normal",
     "speakingCharacter": "???",
-    "text": "Nie odzywaj się",
+    "text": "Inaczej cię zapamiętałem, nick",
     "options": [
       {
-        "text": "Ok",
+        "text": "I co z tego",
         "nextDialIndex": 3
       }
     ]
   },
   {
+    "type": "text",
     "speakingCharacter": "???",
-    "text": "Jestem z organizacji fikrad, która konkuruje z ecpu",
+    "id": "MATH_TEST",
+    "text": "Mały test: ile to 2 * 2",
+    "answers": [
+      {
+        "text": "4",
+        "correctNextDial": 5,
+        "incorrectNextDial": 4
+      }
+    ]
+  },
+  {
+    "type": "normal",
+    "speakingCharacter": "???",
+    "text": "ŹLE idioto, spróbuj jeszcze raz",
     "options": [
       {
-        "text": "Ja nie wiedzioł",
-        "nextDialIndex": 4
-      },
+        "text": "nie obrażaj mnie",
+        "nextDialIndex": 3
+      }
+    ]
+  },
+  {
+    "type": "normal",
+    "speakingCharacter": "???",
+    "text": "Brawo",
+    "options": [
       {
-        "text": "Ja nie chcioł",
-        "nextDialIndex": 5
+        "text": "to może teraz mi coś wyjaśnisz",
+        "nextDialIndex": 6
       }
     ]
   }

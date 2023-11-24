@@ -17,6 +17,18 @@
   align-items: center;
   flex-direction: column;
 }
+.menuDialogBox ol button {
+  background-color: transparent;
+  color: rgb(120, 61, 197);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 36px;
+  border: none;
+  transition: color 200ms;
+}
+.menuDialogBox ol button:hover {
+  color: rgb(173, 113, 252);
+}
 .menuDialogBox img {
   width: 300px;
 }
