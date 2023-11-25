@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 import "./dialog.css";
 const Dialog = ({
-  speakingCharacter,
-  text,
-  options,
+  dial,
   dialNum,
-  type,
-  id,
   nick,
   onNeutralAnswer,
   onNonNeutralAnswer,
 }) => {
+  const { speakingCharacter, text, attachments, options, type, id } = dial;
   const [inputTxt, setInputTxt] = useState("");
+  let attachmentsElements = [];
+  if (attachments)
+    attachmentsElements = attachments.map((att) => {
+      return (
+        <a href={att.url} target="blank" className="attachment">
+          {att.name}
+        </a>
+      );
+    });
   const handleTextInput = (e) => setInputTxt(e.target.value);
   const handleEnterPress = (e) => {
     if (e.key === "Enter" && options.length !== 0) {
@@ -31,6 +37,7 @@ const Dialog = ({
           <h1>{speakingCharacter}</h1>
           <p>{text.replace("nick", nick)}</p>
         </div>
+        <div className="attachments">{...attachmentsElements}</div>
         <div className="options">
           {type === "normal" &&
             options &&

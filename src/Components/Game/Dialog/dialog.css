@@ -19,13 +19,11 @@
   height: 300px;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #dialog0 {
   animation: fadeinDial linear 6s;
-}
-.dial {
-  width: 100%;
 }
 .dialog h1 {
   text-align: left;
@@ -57,6 +55,17 @@
 .dialog input[type="text"]:focus {
   scale: 1.1;
   box-shadow: 0px 0px 20px rgb(43, 0, 100);
+}
+
+.attachments a {
+  color: rgb(146, 77, 235);
+  margin: 10px;
+  padding: 5px;
+  transition: background-color 200ms, color 200ms;
+}
+.attachments a:hover {
+  background-color: rgb(146, 77, 235);
+  color: white;
 }
 @keyframes fadeinDial {
   0% {
