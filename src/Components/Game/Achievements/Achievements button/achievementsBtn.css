@@ -1,0 +1,20 @@
+.achievements-btn {
+  position: absolute;
+  right: 0px;
+  margin: 20px;
+  width: 100px;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: #00020f;
+  transition: box-shadow 200ms, scale 400ms;
+}
+.achievements-btn:hover {
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  scale: 1.1;
+}
+.achievements-btn img {
+  width: 100%;
+  height: 100%;
+}

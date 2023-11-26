@@ -1,0 +1,18 @@
+[
+  {
+    "id": "OPENED_GAME",
+    "isDone": 1,
+    "icon": "",
+    "color": "#dc60dc",
+    "title": "First time?",
+    "description": "Włączyłeś grę po raz pierwszy"
+  },
+  {
+    "id": "HOW_MUCH_2+2",
+    "isDone": 0,
+    "icon": "",
+    "color": "#ff0000",
+    "title": "Geniusz",
+    "description": "odpowiedziałeś dobrze na pytanie ile to 2 + 2"
+  }
+]

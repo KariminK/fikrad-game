@@ -1,6 +1,6 @@
 .game {
   color: white;
-  animation: shadeIn 1000ms linear;
+  /* animation: shadeIn 1000ms linear; */
 }
 @keyframes shadeIn {
   0% {
