@@ -41,6 +41,13 @@
   font-size: 48px;
   text-align: center;
 }
+.menuDialogBox a {
+  color: lightblue;
+  transition: color 200ms;
+}
+.menuDialogBox a:hover {
+  color: rgb(173, 113, 252);
+}
 
 @keyframes shadeIn {
   0% {

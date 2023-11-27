@@ -6,6 +6,7 @@
   align-items: center;
   gap: 20px;
   background-image: url("/src/assets/backgrounds/chooseCharacterBg.jpg");
+  background-position: center;
   background-size: cover;
   animation: shadeIn 1000ms linear;
 }

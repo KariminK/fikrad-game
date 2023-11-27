@@ -1,8 +1,9 @@
 .dialog {
   height: 100vh;
   max-height: 100vh;
-  background-image: url("/src/assets/backgrounds/teamMenuBg.jpg");
-  animation: fadein 3s linear;
+  background-image: url("/src/assets/backgrounds/gameBg.jpg");
+  background-position: center;
+  animation: fadeIn 1s;
 }
 .dialogBox {
   position: absolute;
@@ -23,7 +24,7 @@
   justify-content: space-between;
 }
 #dialog0 {
-  animation: fadeinDial linear 6s;
+  animation: fadeinDial linear 5s;
 }
 .dialog h1 {
   text-align: left;

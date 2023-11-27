@@ -18,6 +18,15 @@
 }
 .achievements ul {
   list-style-type: none;
+  overflow: auto;
+  margin: 30px 0px;
+}
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(227, 158, 255);
+  border-radius: 10px;
 }
 .undefinedAchievementIcon {
   width: 50px;

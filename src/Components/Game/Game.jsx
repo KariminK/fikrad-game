@@ -8,7 +8,7 @@ import ACHIEVEMENTS_DATA from "../../data/achievements.json";
 import AchievementsButton from "./Achievements/Achievements button/AchievementsBtn";
 import Achievements from "./Achievements/Achievements";
 const Game = ({ selectedCharacter }) => {
-  const [scene, setScene] = useState(1);
+  const [scene, setScene] = useState(0);
   const [dialNum, setDialNum] = useState(0);
   const [nick, setNick] = useState("");
   const [achievements, setAchievements] = useState(ACHIEVEMENTS_DATA);
@@ -42,19 +42,15 @@ const Game = ({ selectedCharacter }) => {
       setNick(text);
       setDialNum(nextDial);
       setNotification({
-        text: "Przeszedłeś 1 poziom!",
-        heading: "Brawo!!!",
+        text: "Ustawiłeś swój nick",
+        heading: "Miło cię poznać",
         icon: "",
       });
     }
   };
   const handleAnswer = (text, nextDial, dialID) => {
     setDialNum(nextDial);
-    setNotification({
-      text: "jest git",
-      heading: "Brawo!!!",
-      icon: "",
-    });
+
     if (dialID === "MATH_TEST" && text === "4") {
       let newAchievements = JSON.parse(JSON.stringify(achievements)).map(
         (achievement) => {
@@ -65,7 +61,11 @@ const Game = ({ selectedCharacter }) => {
           }
         }
       );
-      console.log(newAchievements);
+      setNotification({
+        text: "jest git",
+        heading: "Brawo!!!",
+        icon: "",
+      });
       setAchievements(newAchievements);
     }
   };

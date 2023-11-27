@@ -19,6 +19,9 @@
   font-size: 48px;
   letter-spacing: 2px;
 }
+.hiding {
+  animation: slideOut 1s linear;
+}
 .icon {
   width: 75px;
   color: yellow;
@@ -30,5 +33,13 @@
   }
   100% {
     transform: translate(0px);
+  }
+}
+@keyframes slideOut {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(-30vw);
   }
 }

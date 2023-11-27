@@ -5,12 +5,14 @@ const Notification = ({ text, icon, heading, onNotificationHide }) => {
   useEffect(() => {
     let timeoutID = setTimeout(() => {
       setIsVisible(false);
-      onNotificationHide();
-    }, 4000);
+      setTimeout(() => {
+        onNotificationHide();
+      }, 1000);
+    }, 5000);
   }, []);
-  if (text !== "" && isVisible) {
+  if (text !== "") {
     return (
-      <div className="notification">
+      <div className={isVisible ? "notification" : "notification hiding"}>
         {icon ? (
           <img src={icon} className="icon" />
         ) : (

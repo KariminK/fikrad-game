@@ -14,5 +14,45 @@
     "color": "#ff0000",
     "title": "Geniusz",
     "description": "odpowiedziałeś dobrze na pytanie ile to 2 + 2"
+  },
+  {
+    "id": "XYZ",
+    "isDone": 0,
+    "icon": "",
+    "color": "#ff0000",
+    "title": "TEST ",
+    "description": "test"
+  },
+  {
+    "id": "XYZ",
+    "isDone": 0,
+    "icon": "",
+    "color": "#ff0000",
+    "title": "TEST ",
+    "description": "test"
+  },
+  {
+    "id": "XYZ",
+    "isDone": 0,
+    "icon": "",
+    "color": "#ff0000",
+    "title": "TEST ",
+    "description": "test"
+  },
+  {
+    "id": "XYZ",
+    "isDone": 0,
+    "icon": "",
+    "color": "#ff0000",
+    "title": "TEST ",
+    "description": "test"
+  },
+  {
+    "id": "XYZ",
+    "isDone": 0,
+    "icon": "",
+    "color": "#ffff00",
+    "title": "TEST ",
+    "description": "test"
   }
 ]

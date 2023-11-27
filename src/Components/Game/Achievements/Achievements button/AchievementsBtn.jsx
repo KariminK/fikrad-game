@@ -1,5 +1,5 @@
 import icon from "../../../../assets/icons/trophyIcon.jpg";
-import "./AchievementsBtn.css";
+import "./achievementsBtn.css";
 const AchievementsButton = ({ onButtonClick }) => {
   return (
     <button className="achievements-btn" onClick={onButtonClick}>

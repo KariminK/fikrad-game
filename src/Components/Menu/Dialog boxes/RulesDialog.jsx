@@ -1,6 +1,6 @@
-import "../menuDialog.css";
-import MenuButton from "../../Button/MenuButton";
-const RulesDialog = ({ closeRulesHandle }) => {
+import "./menuDialog.css";
+import MenuButton from "../Button/MenuButton";
+const RulesDialog = ({ onCloseRules }) => {
   const fullScreenHandle = () => {
     document.body.requestFullscreen();
   };
@@ -19,7 +19,7 @@ const RulesDialog = ({ closeRulesHandle }) => {
         </li>
         <li>baw się dobrze :D</li>
       </ol>
-      <MenuButton text={"Zamknij"} onButtonClick={closeRulesHandle} />
+      <MenuButton text={"Zamknij"} onButtonClick={onCloseRules} />
     </div>
   );
 };
