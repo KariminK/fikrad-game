@@ -33,7 +33,7 @@ const Achievements = ({ achievements, onAchievementsHide }) => {
                     <h1 style={{ color: achievement.color }}>
                       {achievement.title}
                     </h1>
-                    <p>{achievement.description}</p>
+                    <p>{achievement.isDone ? achievement.description : ""}</p>
                   </div>
                 </li>
               );

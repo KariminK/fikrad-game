@@ -8,51 +8,19 @@
     "description": "Włączyłeś grę po raz pierwszy"
   },
   {
-    "id": "HOW_MUCH_2+2",
+    "id": "SETTED_NICK",
     "isDone": 0,
     "icon": "",
-    "color": "#ff0000",
-    "title": "Geniusz",
-    "description": "odpowiedziałeś dobrze na pytanie ile to 2 + 2"
+    "color": "#dc60dc",
+    "title": "Kim jesteś?",
+    "description": "Ustawiłeś swój nick"
   },
   {
-    "id": "XYZ",
+    "id": "EASTER_EGG1",
     "isDone": 0,
     "icon": "",
-    "color": "#ff0000",
-    "title": "TEST ",
-    "description": "test"
-  },
-  {
-    "id": "XYZ",
-    "isDone": 0,
-    "icon": "",
-    "color": "#ff0000",
-    "title": "TEST ",
-    "description": "test"
-  },
-  {
-    "id": "XYZ",
-    "isDone": 0,
-    "icon": "",
-    "color": "#ff0000",
-    "title": "TEST ",
-    "description": "test"
-  },
-  {
-    "id": "XYZ",
-    "isDone": 0,
-    "icon": "",
-    "color": "#ff0000",
-    "title": "TEST ",
-    "description": "test"
-  },
-  {
-    "id": "XYZ",
-    "isDone": 0,
-    "icon": "",
-    "color": "#ffff00",
-    "title": "TEST ",
-    "description": "test"
+    "color": "#111111",
+    "title": "W pani domu jest bomba",
+    "description": "Odkryłeś 1 easter-egg"
   }
 ]

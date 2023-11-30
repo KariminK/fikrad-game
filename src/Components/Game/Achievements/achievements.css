@@ -69,3 +69,14 @@
   background-color: white;
   color: black;
 }
+@keyframes iconAnimation {
+  0% {
+    align-items: flex-start;
+  }
+  50% {
+    align-items: center;
+  }
+  100% {
+    align-items: flex-end;
+  }
+}

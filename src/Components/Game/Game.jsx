@@ -36,7 +36,7 @@ const Game = ({ selectedCharacter }) => {
         : nextDial,
     };
   });
-
+  const currentDialog = dialogs[dialNum];
   const handleNeutralAnswer = (text, nextDial, dialID) => {
     if (dialID === "INSERT_NICK") {
       setNick(text);
@@ -46,6 +46,16 @@ const Game = ({ selectedCharacter }) => {
         heading: "Miło cię poznać",
         icon: "",
       });
+      let newAchievements = JSON.parse(JSON.stringify(achievements)).map(
+        (achievement) => {
+          if (achievement.id === "SETTED_NICK") {
+            return { ...achievement, isDone: 1 };
+          } else {
+            return achievement;
+          }
+        }
+      );
+      setAchievements(newAchievements);
     }
   };
   const handleAnswer = (text, nextDial, dialID) => {
@@ -66,7 +76,6 @@ const Game = ({ selectedCharacter }) => {
         heading: "Brawo!!!",
         icon: "",
       });
-      setAchievements(newAchievements);
     }
   };
 
@@ -83,7 +92,7 @@ const Game = ({ selectedCharacter }) => {
           />
         )}
         <Dialog
-          dial={dialogs[dialNum]}
+          dial={currentDialog}
           onNonNeutralAnswer={handleAnswer}
           onNeutralAnswer={handleNeutralAnswer}
           nick={nick}

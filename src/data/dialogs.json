@@ -28,31 +28,7 @@
     "text": "Inaczej cię zapamiętałem, nick",
     "options": [
       {
-        "text": "I co z tego",
-        "nextDialIndex": 3
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "speakingCharacter": "???",
-    "id": "MATH_TEST",
-    "text": "Mały test: ile to 2 * 2",
-    "answers": [
-      {
-        "text": "4",
-        "correctNextDial": 5,
-        "incorrectNextDial": 4
-      }
-    ]
-  },
-  {
-    "type": "normal",
-    "speakingCharacter": "???",
-    "text": "ŹLE idioto, spróbuj jeszcze raz",
-    "options": [
-      {
-        "text": "nie obrażaj mnie",
+        "text": "Powiedz, co ja tu robię",
         "nextDialIndex": 3
       }
     ]
@@ -60,10 +36,32 @@
   {
     "type": "normal",
     "speakingCharacter": "???",
-    "text": "Brawo",
+    "text": "Czy pamiętasz czym się wcześniej zajmowałeś?",
     "options": [
       {
-        "text": "to może teraz mi coś wyjaśnisz",
+        "text": "Nie",
+        "nextDialIndex": 4
+      }
+    ]
+  },
+  {
+    "type": "normal",
+    "speakingCharacter": "???",
+    "text": "No to będziesz musiał sobie przypomnieć",
+    "options": [
+      {
+        "text": "Powiesz mi wreszcie, kim jesteś?",
+        "nextDialIndex": 5
+      }
+    ]
+  },
+  {
+    "type": "normal",
+    "speakingCharacter": "???",
+    "text": "Jestem członkiem grupy przestępczej FIKRAD, a twoje umiejętności byłyby nam bardzo potrzebne do naszych celów",
+    "options": [
+      {
+        "text": "Jakich celów?",
         "nextDialIndex": 6
       }
     ]
@@ -71,29 +69,59 @@
   {
     "type": "normal",
     "speakingCharacter": "???",
-    "text": "Masz dwa załączniki, w którym z nich znajduje się przepis na amfetamine",
-    "attachments": [
-      {
-        "name": "nr 1",
-        "url": "https://www.google.com"
-      },
-      {
-        "name": "nr 2",
-        "url": "https://www.facebook.com"
-      }
-    ],
+    "text": "Tym się już nie interesuj, najważniejsze jest to, że jeśli sobie nie przypomnisz całej swojej wiedzy, to nie będziesz mi do niczego potrzebny",
     "options": [
       {
-        "text": "w pierwszym",
+        "text": "I co wtedy?",
         "nextDialIndex": 7
-      },
+      }
+    ]
+  },
+  {
+    "type": "normal",
+    "speakingCharacter": "???",
+    "text": "Wtedy będę musiał cię zabić",
+    "options": [
       {
-        "text": "w drugim",
+        "text": "CO?!",
         "nextDialIndex": 8
+      }
+    ]
+  },
+  {
+    "type": "normal",
+    "speakingCharacter": "???",
+    "text": "To co słyszysz. A teraz mnie posłuchaj jeśli chcesz jeszcze żyć",
+    "options": [
+      {
+        "text": "WYPUŚĆ MNIE",
+        "nextDialIndex": 9
+      }
+    ]
+  },
+  {
+    "type": "normal",
+    "speakingCharacter": "???",
+    "text": "Nastawiam minutnik na 10 minut, a tobie zadam serię pytań dotyczących twojej profesji. Jeśli nie odpowiesz chociażby na jedno z nich - wylatujesz w powietrze",
+    "options": [
+      {
+        "text": "Wylatuję w powietrze?!",
+        "nextDialIndex": 10
+      }
+    ]
+  },
+  {
+    "type": "normal",
+    "speakingCharacter": "???",
+    "text": "Tak, pod twoim krzesłem znajduje się bomba, więc nie zadawaj zbędnych pytań tylko bierz się do pracy",
+    "options": [
+      {
+        "text": "Dobrze tylko mnie nie zabijaj",
+        "nextDialIndex": 11
       },
       {
-        "text": "w żadnym",
-        "nextDialIndex": 4
+        "text": "Ale taka zwykła czy zegarowa?",
+        "nextDialIndex": 12
       }
     ]
   }
