@@ -1,0 +1,28 @@
+.loseScreen {
+  color: red;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: fadeIn 4s ease-out;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+.loseScreen p {
+  cursor: pointer;
+}
+.loseScreen h1 {
+  font-size: 76px;
+  font-weight: normal;
+}
+@keyframes fadeIn {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

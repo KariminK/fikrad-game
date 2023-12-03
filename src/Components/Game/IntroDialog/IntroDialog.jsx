@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "./dialog.css";
-const Dialog = ({
+import DialogBox from "../DialogBox/DialogBox";
+import "./introDialog.css";
+const IntroDialog = ({
   dial,
   dialNum,
   nick,
@@ -32,34 +33,18 @@ const Dialog = ({
   };
   return (
     <div className={`dialog ${type === "text" ? "dialog-text" : ""}`}>
-      <div className="dialogBox" id={`dialog${dialNum}`}>
-        <div className="dial">
-          <h1>{speakingCharacter}</h1>
-          <p>{text.replace("nick", nick)}</p>
-        </div>
-        <div className="attachments">{...attachmentsElements}</div>
-        <div className="options">
-          {type === "normal" &&
-            options &&
-            options.map((option, index) => {
-              return (
-                <button className="option" onClick={option.result} key={index}>
-                  {option.text}
-                </button>
-              );
-            })}
-          {type === "text" && (
-            <input
-              type="text"
-              name="answer"
-              className="dialogTextInput"
-              onChange={handleTextInput}
-              onKeyDown={handleEnterPress}
-            />
-          )}
-        </div>
-      </div>
+      <DialogBox
+        dialNum={dialNum}
+        speakingCharacter={speakingCharacter}
+        nick={nick}
+        type={type}
+        text={text}
+        attachmentsElements={attachmentsElements}
+        options={options}
+        handleTextInput={handleTextInput}
+        handleEnterPress={handleEnterPress}
+      />
     </div>
   );
 };
-export default Dialog;
+export default IntroDialog;

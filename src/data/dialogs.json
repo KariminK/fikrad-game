@@ -116,12 +116,8 @@
     "text": "Tak, pod twoim krzesłem znajduje się bomba, więc nie zadawaj zbędnych pytań tylko bierz się do pracy",
     "options": [
       {
-        "text": "Dobrze tylko mnie nie zabijaj",
+        "text": "Dobrze, tylko mnie nie zabijaj",
         "nextDialIndex": 11
-      },
-      {
-        "text": "Ale taka zwykła czy zegarowa?",
-        "nextDialIndex": 12
       }
     ]
   }

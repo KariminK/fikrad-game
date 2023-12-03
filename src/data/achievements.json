@@ -14,13 +14,5 @@
     "color": "#dc60dc",
     "title": "Kim jesteś?",
     "description": "Ustawiłeś swój nick"
-  },
-  {
-    "id": "EASTER_EGG1",
-    "isDone": 0,
-    "icon": "",
-    "color": "#111111",
-    "title": "W pani domu jest bomba",
-    "description": "Odkryłeś 1 easter-egg"
   }
 ]

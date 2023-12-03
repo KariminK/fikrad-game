@@ -36,6 +36,7 @@
   justify-content: center;
   align-items: center;
   color: yellow;
+  animation: iconAnimation 400ms alternate-reverse infinite;
 }
 .achievement {
   display: flex;

@@ -1,0 +1,16 @@
+.dialog {
+  height: 100vh;
+  max-height: 100vh;
+  background-image: url("/src/assets/backgrounds/gameBg.jpg");
+  background-position: center;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

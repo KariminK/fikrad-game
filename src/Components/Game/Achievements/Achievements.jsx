@@ -21,7 +21,9 @@ const Achievements = ({ achievements, onAchievementsHide }) => {
                   }
                 >
                   {achievement.icon === "" ? (
-                    <span className="undefinedAchievementIcon">!</span>
+                    <span className="undefinedAchievementIcon">
+                      {achievement.isDone ? "!" : "?"}
+                    </span>
                   ) : (
                     <img
                       src={achievement.icon}
