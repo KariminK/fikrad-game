@@ -111,6 +111,16 @@ const Game = ({ selectedCharacter }) => {
               onAchievementsHide={() => setShowAchievements(false)}
             />
           )}
+          {notification.text !== "" && (
+            <Notification
+              text={notification.text}
+              heading={notification.heading}
+              icon={notification.icon}
+              onNotificationHide={() =>
+                setNotification({ text: "", heading: "", icon: "" })
+              }
+            />
+          )}
         </div>
       );
     case 3:
