@@ -9,6 +9,7 @@ import AchievementsButton from "./Achievements/Achievements button/AchievementsB
 import Achievements from "./Achievements/Achievements";
 import Clock from "./Clock/Clock";
 import LoseScreen from "./LoseScreen/LoseScreen";
+import CipherCharacter from "./Characters/cipherCharacter/CipherCharacter";
 const Game = ({ selectedCharacter }) => {
   const [scene, setScene] = useState(1);
   const [dialNum, setDialNum] = useState(0);
@@ -105,6 +106,7 @@ const Game = ({ selectedCharacter }) => {
         <div className="game">
           <Clock onRunOutOfTime={() => setScene(3)} />
           <AchievementsButton onButtonClick={() => setShowAchievements(true)} />
+          <CipherCharacter nick={nick} />
           {showAchievements && (
             <Achievements
               achievements={achievements}

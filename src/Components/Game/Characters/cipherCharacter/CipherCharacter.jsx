@@ -1,7 +1,12 @@
 import { useState } from "react";
-
-const CipherCharacter = () => {
+import "./cipherCharacter.css";
+import RoomsQuest from "./Quests/RoomsQuest/RoomsQuest";
+const CipherCharacter = ({ nick }) => {
   const [quest, setQuest] = useState(0);
-  return <div className="character" id="cipher"></div>;
+  return (
+    <div id="cipherCharacter">
+      <RoomsQuest />
+    </div>
+  );
 };
 export default CipherCharacter;

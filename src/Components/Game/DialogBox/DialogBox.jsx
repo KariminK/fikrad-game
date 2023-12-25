@@ -3,7 +3,7 @@ const DialogBox = ({
   dialNum = -1,
   speakingCharacter,
   nick,
-  attachmentsElements,
+  attachmentsElements = [],
   options,
   handleTextInput,
   handleEnterPress,
