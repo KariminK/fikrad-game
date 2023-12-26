@@ -5,7 +5,7 @@ const CipherCharacter = ({ nick }) => {
   const [quest, setQuest] = useState(0);
   return (
     <div id="cipherCharacter">
-      <RoomsQuest />
+      <RoomsQuest nick={nick} />
     </div>
   );
 };

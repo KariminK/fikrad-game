@@ -1,13 +1,15 @@
 import mapImg from "/src/assets/misc/map.jpg";
 import React from "react";
 import ImageMapper from "react-img-mapper";
-const Map = () => {
+import "./map.css";
+import "../dialogs.css";
+const Map = ({ onCloseMap, onAreaClick }) => {
   const MAP = {
     name: "my-map",
     areas: [
       {
         id: "21a3befd-c97b-476d-8e0c-7c98399988bf",
-        title: "B-site",
+        title: "kitchen",
         shape: "poly",
         name: "13",
         fillColor: "#00ff194c",
@@ -16,7 +18,7 @@ const Map = () => {
       },
       {
         id: "21a3befd-c97b-476d-8e0c-",
-        title: "T-spawn",
+        title: "living room",
         shape: "rect",
         name: "13",
         fillColor: "#FF0000A0",
@@ -25,7 +27,7 @@ const Map = () => {
       },
       {
         id: "21a3befd-c97b",
-        title: "CT-spawn",
+        title: "basement",
         shape: "rect",
         name: "13",
         fillColor: "#FF0000A0",
@@ -37,7 +39,15 @@ const Map = () => {
 
   return (
     <div id="map">
-      <ImageMapper width={"780"} src={mapImg} map={MAP} />
+      <button id="closeMapBtn" onClick={onCloseMap}>
+        Zamknij mapę
+      </button>
+      <ImageMapper
+        width={"670"}
+        src={mapImg}
+        map={MAP}
+        onClick={(area) => onAreaClick(area)}
+      />
     </div>
   );
 };

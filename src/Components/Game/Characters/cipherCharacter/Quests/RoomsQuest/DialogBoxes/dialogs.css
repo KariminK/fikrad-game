@@ -1,0 +1,15 @@
+.roomsQuest #map,
+#hints,
+#passwordForm,
+#roomMap {
+  width: 800px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid white;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #000000d8;
+  backdrop-filter: blur(4px);
+}

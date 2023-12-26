@@ -1,0 +1,51 @@
+.hint::before {
+  content: ">";
+  background-color: purple;
+  color: white;
+  font-size: 32px;
+  padding: 0px 10px;
+  aspect-ratio: 1;
+  border-radius: 100px;
+  transition: box-shadow 200ms, background-color 200ms, color 200ms;
+}
+.whiteMark::before {
+  background-color: white;
+  color: purple;
+}
+.whiteMark {
+  color: white !important;
+}
+.hint span {
+  text-align: center;
+  color: rgb(180, 23, 180);
+  margin-left: auto;
+}
+.hint {
+  color: white;
+  margin: 25px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  gap: 10px;
+  border-radius: 33px;
+  padding: 10px 0px;
+  transition: color 200ms, background-color 200ms;
+}
+.hidden {
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+  transition: box-shadow 200ms, background-color 200ms, color 200ms;
+}
+.hidden:hover {
+  box-shadow: 0px 0px 15px white;
+  background-color: white;
+  color: purple;
+}
+.hidden:hover::before {
+  background-color: white;
+  color: purple;
+}
+.expired {
+  filter: brightness(60%);
+}

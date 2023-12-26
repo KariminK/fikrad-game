@@ -1,9 +1,18 @@
-import Map from "./Map/Map";
+import Map from "./DialogBoxes/Map/Map.jsx";
 import DialogBox from "../../../../DialogBox/DialogBox";
+import PasswordForm from "./DialogBoxes/PasswordForm/PasswordForm";
 import "./roomsQuest.css";
 import { useState } from "react";
+import Hints from "./DialogBoxes/Hints/Hints.jsx";
+import Room from "./DialogBoxes/Room/Room.jsx";
 const RoomsQuest = ({ nick }) => {
   const [showMap, setShowMap] = useState(false);
+  const [showPasswordForm, setShowPasswordForm] = useState(false);
+  const [showHints, setShowHints] = useState(false);
+  const [room, setRoom] = useState("");
+  const areaClickHandle = (area) => {
+    setRoom(area);
+  };
   return (
     <div className="roomsQuest">
       <DialogBox
@@ -16,15 +25,39 @@ const RoomsQuest = ({ nick }) => {
         options={[
           {
             text: "Pokaż mapę",
-            result: () => setShowMap(true),
+            result: () => {
+              setShowHints(false);
+              setShowMap(true);
+              setShowPasswordForm(false);
+            },
           },
           {
             text: "Wpisz hasło",
-            result: () => setShowMap(true),
+            result: () => {
+              setShowHints(false);
+              setShowMap(false);
+              setShowPasswordForm(true);
+            },
+          },
+          {
+            text: "Pokaż podpowiedzi",
+            result: () => {
+              setShowMap(false);
+              setShowPasswordForm(false);
+              setShowHints(true);
+            },
           },
         ]}
       />
-      {showMap && <Map />}
+      {showMap && (
+        <Map
+          onAreaClick={areaClickHandle}
+          onCloseMap={() => setShowMap(false)}
+        />
+      )}
+      {room && <Room room={room.title} onRoomClose={() => setRoom("")} />}
+      {showPasswordForm && <PasswordForm />}
+      {showHints && <Hints />}
     </div>
   );
 };
