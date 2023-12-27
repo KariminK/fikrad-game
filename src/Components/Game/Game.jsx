@@ -11,7 +11,7 @@ import Clock from "./Clock/Clock";
 import LoseScreen from "./LoseScreen/LoseScreen";
 import CipherCharacter from "./Characters/cipherCharacter/CipherCharacter";
 const Game = ({ selectedCharacter }) => {
-  const [scene, setScene] = useState(1);
+  const [scene, setScene] = useState(0);
   const [dialNum, setDialNum] = useState(0);
   const [nick, setNick] = useState("");
   const [achievements, setAchievements] = useState(ACHIEVEMENTS_DATA);

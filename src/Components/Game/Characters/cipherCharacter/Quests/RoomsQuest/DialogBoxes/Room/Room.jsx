@@ -3,7 +3,7 @@ import React from "react";
 import ImageMapper from "react-img-mapper";
 import "../dialogs.css";
 import "./room.css";
-const Room = ({ room, onRoomClose }) => {
+const Room = ({ room, onRoomClose, onThingClick }) => {
   const MAPS = {
     kitchen: {
       name: "kitchen map",
@@ -11,7 +11,7 @@ const Room = ({ room, onRoomClose }) => {
         {
           title: "book",
           shape: "poly",
-          name: "",
+          name: "wrong",
           fillColor: "#FFFFF0A0",
           strokeColor: "#2b0064",
           coords: [
@@ -22,7 +22,7 @@ const Room = ({ room, onRoomClose }) => {
         {
           title: "drawer",
           shape: "poly",
-          name: "___7",
+          name: "wrong",
           fillColor: "#FFFFF0A0",
           strokeColor: "#2b0064",
           coords: [628, 437, 677, 458, 676, 508, 628, 483],
@@ -38,7 +38,7 @@ const Room = ({ room, onRoomClose }) => {
         {
           title: "dish2",
           shape: "poly",
-          name: "___7",
+          name: "wrong",
           fillColor: "#FFFFF0A0",
           strokeColor: "#2b0064",
           coords: [
@@ -49,7 +49,7 @@ const Room = ({ room, onRoomClose }) => {
         {
           title: "dish3",
           shape: "rect",
-          name: "___7",
+          name: "wrong",
           fillColor: "#FFFFF0A0",
           strokeColor: "#2b0064",
           coords: [319, 475, 382, 499],
@@ -57,7 +57,7 @@ const Room = ({ room, onRoomClose }) => {
         {
           title: "window",
           shape: "poly",
-          name: "gandalf",
+          name: "wrong",
           fillColor: "#FFFFF0A0",
           strokeColor: "#2b0064",
           coords: [601, 125, 700, 73, 700, 380, 600, 355],
@@ -65,7 +65,7 @@ const Room = ({ room, onRoomClose }) => {
         {
           title: "shelf",
           shape: "poly",
-          name: "gandalf",
+          name: "wrong",
           fillColor: "#FFFFF0A0",
           strokeColor: "#2b0064",
           coords: [41, 148, 86, 160, 86, 576, 41, 619],
@@ -73,7 +73,7 @@ const Room = ({ room, onRoomClose }) => {
         {
           title: "pot1",
           shape: "rect",
-          name: "gandalf",
+          name: "wrong",
           fillColor: "#FFFFF0A0",
           strokeColor: "#2b0064",
           coords: [308, 344, 347, 368],
@@ -81,7 +81,7 @@ const Room = ({ room, onRoomClose }) => {
         {
           title: "pot2",
           shape: "poly",
-          name: "gandalf",
+          name: "wrong",
           fillColor: "#FFFFF0A0",
           strokeColor: "#2b0064",
           coords: [
@@ -115,7 +115,7 @@ const Room = ({ room, onRoomClose }) => {
         width={"700"}
         src={IMAGES[room]}
         map={MAPS[room]}
-        onClick={(area) => onAreaClick(area)}
+        onClick={(area) => onThingClick(area)}
       />
     </div>
   );

@@ -1,0 +1,32 @@
+#kitchenAnswer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px;
+  background-color: #000000a0;
+  width: 400px;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+#kitchenAnswer img {
+  width: 100%;
+}
+.answer .closeBtn {
+  width: 100%;
+  font-size: 24px;
+  padding: 10px 0px;
+  color: white;
+  background-color: transparent;
+  border: 5px solid purple;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: background-color 200ms;
+  cursor: pointer;
+}
+.answer .closeBtn:hover {
+  background-color: purple;
+}
+.answer p {
+  font-size: 28px;
+}

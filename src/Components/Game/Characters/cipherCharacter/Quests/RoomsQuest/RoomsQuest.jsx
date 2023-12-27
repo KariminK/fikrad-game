@@ -5,14 +5,37 @@ import "./roomsQuest.css";
 import { useState } from "react";
 import Hints from "./DialogBoxes/Hints/Hints.jsx";
 import Room from "./DialogBoxes/Room/Room.jsx";
+import qrCode from "/src/assets/misc/QRCode.png";
+import Answer from "./DialogBoxes/Answer/Answer.jsx";
 const RoomsQuest = ({ nick }) => {
   const [showMap, setShowMap] = useState(false);
   const [showPasswordForm, setShowPasswordForm] = useState(false);
   const [showHints, setShowHints] = useState(false);
   const [room, setRoom] = useState("");
+  const [answer, setAnswer] = useState("");
   const areaClickHandle = (area) => {
     setRoom(area);
   };
+  const thingClickHandle = (thing) => {
+    if (thing.name === "wrong") {
+      setAnswer("");
+      console.log("Wrong item!");
+    } else {
+      setAnswer(thing.name);
+    }
+  };
+  let answerElement;
+  switch (answer) {
+    case "___7":
+      answerElement = (
+        <Answer
+          imgSource={qrCode}
+          id={"kitchenAnswer"}
+          onClose={() => setAnswer("")}
+        />
+      );
+      break;
+  }
   return (
     <div className="roomsQuest">
       <DialogBox
@@ -55,9 +78,16 @@ const RoomsQuest = ({ nick }) => {
           onCloseMap={() => setShowMap(false)}
         />
       )}
-      {room && <Room room={room.title} onRoomClose={() => setRoom("")} />}
+      {room && (
+        <Room
+          room={room.title}
+          onRoomClose={() => setRoom("")}
+          onThingClick={thingClickHandle}
+        />
+      )}
       {showPasswordForm && <PasswordForm />}
       <Hints hide={!showHints} />
+      {answerElement}
     </div>
   );
 };
