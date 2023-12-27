@@ -3,7 +3,7 @@ import Menu from "./Components/Menu/Menu";
 import ChooseCharacter from "./Components/ChooseCharacter/ChooseCharacter";
 import Game from "./Components/Game/Game";
 function App() {
-  const [view, setView] = useState(2);
+  const [view, setView] = useState(0);
   const [selectedCharacter, setSelectedCharacter] = useState(1);
   const playGameHandle = () => {
     setView(1);

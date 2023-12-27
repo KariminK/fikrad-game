@@ -1,9 +1,9 @@
 import "../dialogs.css";
 import "./hints.css";
 import Hint from "./Hint/Hint";
-const Hints = () => {
+const Hints = ({ hide }) => {
   return (
-    <div id="hints">
+    <div id="hints" className={hide ? "hide" : ""}>
       <h1>Podpowiedzi</h1>
       <ul>
         <Hint text={"Podano do stołu"} />

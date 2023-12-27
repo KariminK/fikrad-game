@@ -33,6 +33,11 @@ const IntroDialog = ({
   };
   return (
     <div className={`dialog ${type === "text" ? "dialog-text" : ""}`}>
+      <img
+        src="/src/assets/backgrounds/fikradAgent.png"
+        alt="agent"
+        id="agentIMG"
+      />
       <DialogBox
         dialNum={dialNum}
         speakingCharacter={speakingCharacter}

@@ -19,7 +19,7 @@ const RoomsQuest = ({ nick }) => {
         speakingCharacter={"???"}
         nick={nick}
         text={
-          "Twoim pierwszym zadaniem będzie znalezienie kodu ukrytego w jednym z pomieszczeń w tym budynku."
+          "Twoim pierwszym zadaniem będzie znalezienie kodu ukrytego w jednym z pomieszczeń w tym budynku. Możesz skorzystać z 4 podpowiedzi, które wygasną 20 sekund po odkryciu. Jeśli chociaż dotkniesz złej rzeczy - dostajesz kulkę w tył głowy"
         }
         type={"normal"}
         options={[
@@ -57,7 +57,7 @@ const RoomsQuest = ({ nick }) => {
       )}
       {room && <Room room={room.title} onRoomClose={() => setRoom("")} />}
       {showPasswordForm && <PasswordForm />}
-      {showHints && <Hints />}
+      <Hints hide={!showHints} />
     </div>
   );
 };

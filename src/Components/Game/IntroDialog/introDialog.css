@@ -5,12 +5,29 @@
   background-position: center;
   animation: fadeIn 1s;
 }
-
-@keyframes fadein {
+#agentIMG {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  animation: slideAnim 4s;
+  height: 100vh;
+}
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes slideAnim {
+  0% {
+    transform: translateY(100vh);
+  }
+  80% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0vh);
   }
 }
