@@ -1,12 +1,12 @@
-import Map from "./DialogBoxes/Map/Map.jsx";
-import DialogBox from "../../../../DialogBox/DialogBox";
-import PasswordForm from "./DialogBoxes/PasswordForm/PasswordForm";
+import Map from "../../Dialog Boxes/RoomsQuest/Map/Map.jsx";
+import DialogBox from "../../Dialog Boxes/Game/DialogBox.jsx";
+import PasswordForm from "../../Dialog Boxes/RoomsQuest/PasswordForm/PasswordForm.jsx";
 import "./roomsQuest.css";
 import { useState } from "react";
-import Hints from "./DialogBoxes/Hints/Hints.jsx";
-import Room from "./DialogBoxes/Room/Room.jsx";
+import Hints from "../../Dialog Boxes/RoomsQuest/Hints/Hints.jsx";
+import Room from "../../Dialog Boxes/RoomsQuest/Room/Room.jsx";
 import qrCode from "/src/assets/misc/QRCode.png";
-import Answer from "./DialogBoxes/Answer/Answer.jsx";
+import Answer from "../../Dialog Boxes/RoomsQuest/Answer/Answer.jsx";
 const RoomsQuest = ({ nick }) => {
   const [showMap, setShowMap] = useState(false);
   const [showPasswordForm, setShowPasswordForm] = useState(false);

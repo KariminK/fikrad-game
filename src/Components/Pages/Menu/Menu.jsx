@@ -1,7 +1,7 @@
 import "./menu.css";
-import CompView from "./Intro pages/CompView";
-import MenuView from "./Intro pages/MenuView";
-import TeamView from "./Intro pages/TeamView";
+import CompView from "../../Scenes/Intro/CompView";
+import MenuView from "../../Scenes/Intro/MenuView";
+import TeamView from "../../Scenes/Intro/TeamView";
 import { useState, useEffect } from "react";
 const Menu = ({ onPlayGame }) => {
   const [currentView, setCurrentView] = useState(0);

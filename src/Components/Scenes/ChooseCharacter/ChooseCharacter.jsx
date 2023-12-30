@@ -1,5 +1,5 @@
 import "./chooseCharacter.css";
-import Character from "./Character/Character";
+import Character from "../../Buttons/Character/Character";
 const ChooseCharacter = ({ onChooseCharacter }) => {
   return (
     <div className="chooseCharacter">

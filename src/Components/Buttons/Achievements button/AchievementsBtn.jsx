@@ -1,4 +1,4 @@
-import icon from "../../../../assets/icons/trophyIcon.jpg";
+import icon from "/src/assets/icons/trophyIcon.jpg";
 import "./achievementsBtn.css";
 const AchievementsButton = ({ onButtonClick }) => {
   return (

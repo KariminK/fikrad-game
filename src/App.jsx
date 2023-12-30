@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Menu from "./Components/Menu/Menu";
-import ChooseCharacter from "./Components/ChooseCharacter/ChooseCharacter";
-import Game from "./Components/Game/Game";
+import Menu from "./Components/Pages/Menu/Menu";
+import Game from "./Components/Pages/Game/Game";
+import ChooseCharacter from "./Components/Scenes/ChooseCharacter/ChooseCharacter";
 function App() {
   const [view, setView] = useState(0);
   const [selectedCharacter, setSelectedCharacter] = useState(1);

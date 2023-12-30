@@ -1,9 +1,9 @@
-import logoAnimation from "../../../assets/logos/gameLogoAnim.gif";
+import logoAnimation from "/src/assets/logos/gameLogoAnim.gif";
 import { useState } from "react";
-import RulesDialog from "../Dialog boxes/RulesDialog";
-import AboutDialog from "../Dialog boxes/AboutDialog";
-import MenuButton from "../Button/MenuButton";
-import SourcesDialog from "../Dialog boxes/SourcesDialog";
+import RulesDialog from "../../Dialog Boxes/Menu/RulesDialog";
+import AboutDialog from "../../Dialog Boxes/Menu/AboutDialog";
+import MenuButton from "../../Buttons/Button/MenuButton";
+import SourcesDialog from "../../Dialog Boxes/Menu/SourcesDialog";
 const MenuView = ({ onPlayGame }) => {
   const [openRules, setOpenRules] = useState(false);
   const [openAbout, setOpenAbout] = useState(false);

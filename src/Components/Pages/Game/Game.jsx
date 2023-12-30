@@ -1,15 +1,15 @@
 import "./game.css";
 import { useState } from "react";
-import Intro from "./Intro/Intro";
-import IntroDialog from "./IntroDialog/IntroDialog";
-import Notification from "./Notification/Notification";
-import DIALOG_DATA from "../../data/dialogs.json";
-import ACHIEVEMENTS_DATA from "../../data/achievements.json";
-import AchievementsButton from "./Achievements/Achievements button/AchievementsBtn";
-import Achievements from "./Achievements/Achievements";
+import Intro from "../../Scenes/Start game/Intro";
+import IntroDialog from "../../Scenes/IntroDialog/IntroDialog";
+import Notification from "../../Notification/Notification";
+import DIALOG_DATA from "../../../data/dialogs.json";
+import ACHIEVEMENTS_DATA from "../../../data/achievements.json";
+import AchievementsButton from "../../Buttons/Achievements button/AchievementsBtn";
+import Achievements from "../../Dialog Boxes/Achievements/Achievements";
 import Clock from "./Clock/Clock";
-import LoseScreen from "./LoseScreen/LoseScreen";
-import CipherCharacter from "./Characters/cipherCharacter/CipherCharacter";
+import LoseScreen from "../../Scenes/LoseScreen/LoseScreen";
+import CipherCharacter from "../../Characters/cipherCharacter/CipherCharacter";
 const Game = ({ selectedCharacter }) => {
   const [scene, setScene] = useState(0);
   const [dialNum, setDialNum] = useState(0);

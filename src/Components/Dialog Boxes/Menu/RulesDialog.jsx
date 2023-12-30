@@ -1,5 +1,5 @@
 import "./menuDialog.css";
-import MenuButton from "../Button/MenuButton";
+import MenuButton from "../../Buttons/Button/MenuButton";
 const RulesDialog = ({ onCloseRules }) => {
   const fullScreenHandle = () => {
     document.body.requestFullscreen();

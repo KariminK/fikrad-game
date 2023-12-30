@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DialogBox from "../DialogBox/DialogBox";
+import DialogBox from "../../Dialog Boxes/Game/DialogBox";
 import "./introDialog.css";
 const IntroDialog = ({
   dial,

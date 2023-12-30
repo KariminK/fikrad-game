@@ -1,6 +1,6 @@
 import "../dialogs.css";
 import "./hints.css";
-import Hint from "./Hint/Hint";
+import Hint from "../../../Buttons/Hint/Hint";
 const Hints = ({ hide }) => {
   return (
     <div id="hints" className={hide ? "hide" : ""}>
