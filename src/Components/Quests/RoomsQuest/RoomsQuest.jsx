@@ -1,14 +1,14 @@
 import "./roomsQuest.css";
 import "../quest.css";
-import Map from "../../Dialog Boxes/RoomsQuest/Map/Map.jsx";
+import Map from "../../Dialog Boxes/Quests/Map/Map.jsx";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox.jsx";
-import PasswordForm from "../../Dialog Boxes/RoomsQuest/PasswordForm/PasswordForm.jsx";
+import PasswordForm from "../../Dialog Boxes/Quests/PasswordForm/PasswordForm.jsx";
 import { useState } from "react";
-import Hints from "../../Dialog Boxes/RoomsQuest/Hints/Hints.jsx";
-import Room from "../../Dialog Boxes/RoomsQuest/Room/Room.jsx";
+import Hints from "../../Dialog Boxes/Quests/Hints/Hints.jsx";
+import Room from "../../Dialog Boxes/Quests/Room/Room.jsx";
 import qrCode from "/src/assets/misc/QRCode.png";
 import barcode from "/src/assets/misc/barcode.png";
-import Answer from "../../Dialog Boxes/RoomsQuest/Answer/Answer.jsx";
+import Answer from "../../Dialog Boxes/Quests/Answer/Answer.jsx";
 const RoomsQuest = ({ nick, nextQuest }) => {
   const [showMap, setShowMap] = useState(false);
   const [showPasswordForm, setShowPasswordForm] = useState(false);
@@ -73,7 +73,7 @@ const RoomsQuest = ({ nick, nextQuest }) => {
       break;
   }
   return (
-    <div className="roomsQuest">
+    <div className="quest" id="roomsQuest">
       <DialogBox
         speakingCharacter={"???"}
         nick={nick}
