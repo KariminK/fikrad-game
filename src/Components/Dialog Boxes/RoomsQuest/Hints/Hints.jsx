@@ -7,21 +7,13 @@ const Hints = ({ hide }) => {
       <h1>Podpowiedzi</h1>
       <ul>
         <Hint text={"Podano do stołu"} />
+        <Hint text={"czaszka, ASCII"} />
         <Hint
           text={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, ullam!"
+            "Never gonna give you up Never gonna let you down Never gonna run around and desert you"
           }
         />
-        <Hint
-          text={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, ullam!"
-          }
-        />
-        <Hint
-          text={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, ullam!"
-          }
-        />
+        <Hint text={"Feels like I'm walking on sunshine!"} />
       </ul>
     </div>
   );

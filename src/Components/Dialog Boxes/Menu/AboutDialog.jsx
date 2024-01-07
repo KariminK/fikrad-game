@@ -6,10 +6,8 @@ const AboutDialog = ({ onCloseAbout }) => {
     <div className="menuDialogBox">
       <img src={teamLogo} alt="Hot water company" />
       <ul>
-        <li>Kacper Błoszko - kod gry</li>
-        <li>Natalia Czarnik - menu gry, research</li>
-        <li>Krystian Zarych - research, pytania</li>
-        <li>Maja Kieca - grafiki</li>
+        <li>Kacper Błoszko - kod gry, grafiki</li>
+        <li>Natalia Czarnik - fabuła, research</li>
       </ul>
       <MenuButton text={"Zamknij"} onButtonClick={onCloseAbout} />
     </div>

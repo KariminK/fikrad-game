@@ -23,7 +23,7 @@ const Map = ({ onCloseMap, onAreaClick }) => {
         name: "13",
         fillColor: "#FF0000A0",
         strokeColor: "black",
-        coords: [225, 677, 370, 730],
+        coords: [100, 400, 400, 600],
       },
       {
         id: "21a3befd-c97b",

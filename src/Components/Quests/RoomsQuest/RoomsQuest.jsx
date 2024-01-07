@@ -1,18 +1,21 @@
+import "./roomsQuest.css";
+import "../quest.css";
 import Map from "../../Dialog Boxes/RoomsQuest/Map/Map.jsx";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox.jsx";
 import PasswordForm from "../../Dialog Boxes/RoomsQuest/PasswordForm/PasswordForm.jsx";
-import "./roomsQuest.css";
 import { useState } from "react";
 import Hints from "../../Dialog Boxes/RoomsQuest/Hints/Hints.jsx";
 import Room from "../../Dialog Boxes/RoomsQuest/Room/Room.jsx";
 import qrCode from "/src/assets/misc/QRCode.png";
+import barcode from "/src/assets/misc/barcode.png";
 import Answer from "../../Dialog Boxes/RoomsQuest/Answer/Answer.jsx";
-const RoomsQuest = ({ nick }) => {
+const RoomsQuest = ({ nick, nextQuest }) => {
   const [showMap, setShowMap] = useState(false);
   const [showPasswordForm, setShowPasswordForm] = useState(false);
   const [showHints, setShowHints] = useState(false);
   const [room, setRoom] = useState("");
   const [answer, setAnswer] = useState("");
+  const [password, setPassword] = useState("");
   const areaClickHandle = (area) => {
     setRoom(area);
   };
@@ -24,6 +27,12 @@ const RoomsQuest = ({ nick }) => {
       setAnswer(thing.name);
     }
   };
+  const passwordChangeHandle = (e) => {
+    setPassword(e.target.value);
+  };
+  const confirmPasswordHandle = () => {
+    if (password === "2137") nextQuest();
+  };
   let answerElement;
   switch (answer) {
     case "___7":
@@ -31,6 +40,33 @@ const RoomsQuest = ({ nick }) => {
         <Answer
           imgSource={qrCode}
           id={"kitchenAnswer"}
+          onClose={() => setAnswer("")}
+        />
+      );
+      break;
+    case "__3_":
+      answerElement = (
+        <Answer
+          id={"basementAnswer"}
+          text={"95 95 51 95"}
+          onClose={() => setAnswer("")}
+        />
+      );
+      break;
+    case "2___":
+      answerElement = (
+        <Answer
+          id={"livingRoomAnswer1"}
+          imgSource={barcode}
+          onClose={() => setAnswer("")}
+        />
+      );
+      break;
+    case "_1__":
+      answerElement = (
+        <Answer
+          id={"livingRoomAnswer2"}
+          text={"true"}
           onClose={() => setAnswer("")}
         />
       );
@@ -85,7 +121,13 @@ const RoomsQuest = ({ nick }) => {
           onThingClick={thingClickHandle}
         />
       )}
-      {showPasswordForm && <PasswordForm />}
+      {showPasswordForm && (
+        <PasswordForm
+          onPasswordChange={passwordChangeHandle}
+          password={password}
+          onConfirmPassword={confirmPasswordHandle}
+        />
+      )}
       <Hints hide={!showHints} />
       {answerElement}
     </div>
