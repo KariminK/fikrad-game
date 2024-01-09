@@ -7,7 +7,7 @@ const AboutDialog = ({ onCloseAbout }) => {
       <img src={teamLogo} alt="Hot water company" />
       <ul>
         <li>Kacper Błoszko - kod gry, grafiki</li>
-        <li>Natalia Czarnik - fabuła, research</li>
+        <li>Natalia Czarnik - fabuła, zadania</li>
       </ul>
       <MenuButton text={"Zamknij"} onButtonClick={onCloseAbout} />
     </div>

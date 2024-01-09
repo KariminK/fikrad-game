@@ -106,7 +106,7 @@ const Game = ({ selectedCharacter }) => {
         <div className="game">
           <Clock onRunOutOfTime={() => setScene(3)} />
           <AchievementsButton onButtonClick={() => setShowAchievements(true)} />
-          <CipherCharacter nick={nick} />
+          <CipherCharacter nick={nick} onDie={() => setScene(3)} />
           {showAchievements && (
             <Achievements
               achievements={achievements}

@@ -9,7 +9,7 @@ import Room from "../../Dialog Boxes/Quests/Room/Room.jsx";
 import qrCode from "/src/assets/misc/QRCode.png";
 import barcode from "/src/assets/misc/barcode.png";
 import Answer from "../../Dialog Boxes/Quests/Answer/Answer.jsx";
-const RoomsQuest = ({ nick, nextQuest }) => {
+const RoomsQuest = ({ nick, nextQuest, onDie }) => {
   const [showMap, setShowMap] = useState(false);
   const [showPasswordForm, setShowPasswordForm] = useState(false);
   const [showHints, setShowHints] = useState(false);
@@ -22,7 +22,7 @@ const RoomsQuest = ({ nick, nextQuest }) => {
   const thingClickHandle = (thing) => {
     if (thing.name === "wrong") {
       setAnswer("");
-      console.log("Wrong item!");
+      onDie();
     } else {
       setAnswer(thing.name);
     }

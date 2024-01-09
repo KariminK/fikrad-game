@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  animation: fadeInQuest 1s linear;
+  animation: fadeInQuest 2s linear;
 }
 @keyframes fadeInQuest {
   0% {

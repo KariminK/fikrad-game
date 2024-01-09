@@ -2,8 +2,7 @@ import "./caesarQuest.css";
 import "../quest.css";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox";
 import { useState } from "react";
-import PasswordForm from "../../Dialog Boxes/Quests/PasswordForm/PasswordForm";
-const CaesarQuest = ({ nick, nextQuest }) => {
+const CaesarQuest = ({ nick, nextQuest, onDie }) => {
   const [dialNum, setDialNum] = useState(0);
   const [answer, setAnswer] = useState("");
   const dialogs = [
@@ -11,13 +10,13 @@ const CaesarQuest = ({ nick, nextQuest }) => {
       text: "Ładnie sobie poradziłeś... Widocznie cała twoja wiedza nie wyparowała. To dobrze, przydasz nam się",
       option: [
         {
-          text: "Do czego?",
+          text: "Gdzie jesteśmy?",
           result: () => setDialNum(1),
         },
       ],
     },
     {
-      text: "Nie powinieneś zadawać pytań, zważywszy na to, że czas ucieka",
+      text: "W (być może) twoim miejscu pracy, ale nie powinieneś zadawać pytań, zważywszy na to, że czas ucieka",
       option: [
         {
           text: "MÓW CO MAM ROBIĆ",
@@ -56,13 +55,17 @@ const CaesarQuest = ({ nick, nextQuest }) => {
     setAnswer(e.target.value);
   };
   const handleEnterPress = (e) => {
-    if (e.key === "Enter" && answer.toLowerCase() === "wiedźmin") nextQuest();
+    console.log("enter was pressed");
+    if (e.key === "Enter") {
+      if (answer.toLowerCase() === "wiedźmin") nextQuest();
+      else onDie();
+    }
   };
   return (
     <div id="CaesarQuest" className="quest">
       <DialogBox
         speakingCharacter={"???"}
-        nick={"karimin"}
+        nick={nick}
         type={dialogs[dialNum].type ?? "normal"}
         text={dialogs[dialNum].text}
         options={dialogs[dialNum].option}
