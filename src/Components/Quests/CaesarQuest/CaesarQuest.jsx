@@ -1,6 +1,7 @@
 import "./caesarQuest.css";
 import "../quest.css";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox";
+import sound from "/src/assets/sounds/wrong answer.wav";
 import { useState } from "react";
 const CaesarQuest = ({ nick, nextQuest, onDie }) => {
   const [dialNum, setDialNum] = useState(0);
@@ -58,7 +59,10 @@ const CaesarQuest = ({ nick, nextQuest, onDie }) => {
     console.log("enter was pressed");
     if (e.key === "Enter") {
       if (answer.toLowerCase() === "wiedźmin") nextQuest();
-      else onDie();
+      else {
+        const wrongAnswerSound = new Audio(sound);
+        wrongAnswerSound.play();
+      }
     }
   };
   return (

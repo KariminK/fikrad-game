@@ -9,6 +9,7 @@ import Room from "../../Dialog Boxes/Quests/Room/Room.jsx";
 import qrCode from "/src/assets/misc/QRCode.png";
 import barcode from "/src/assets/misc/barcode.png";
 import Answer from "../../Dialog Boxes/Quests/Answer/Answer.jsx";
+import sound from "/src/assets/sounds/wrong answer.wav";
 const RoomsQuest = ({ nick, nextQuest, onDie }) => {
   const [showMap, setShowMap] = useState(false);
   const [showPasswordForm, setShowPasswordForm] = useState(false);
@@ -32,6 +33,10 @@ const RoomsQuest = ({ nick, nextQuest, onDie }) => {
   };
   const confirmPasswordHandle = () => {
     if (password === "2137") nextQuest();
+    else {
+      const wrongAnswerSound = new Audio(sound);
+      wrongAnswerSound.play();
+    }
   };
   let answerElement;
   switch (answer) {

@@ -1,5 +1,5 @@
 import logoAnimation from "/src/assets/logos/gameLogoAnim.gif";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RulesDialog from "../../Dialog Boxes/Menu/RulesDialog";
 import AboutDialog from "../../Dialog Boxes/Menu/AboutDialog";
 import MenuButton from "../../Buttons/Button/MenuButton";

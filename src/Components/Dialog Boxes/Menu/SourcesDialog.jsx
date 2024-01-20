@@ -36,6 +36,23 @@ const SourcesDialog = ({ onCloseSources }) => {
                 Pixabay
               </a>
             </li>
+            <li>
+              Dźwięk strzału z:{" "}
+              <a
+                target="blank"
+                href="https://mixkit.co/free-sound-effects/gun/"
+              >
+                mixkit
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Muzyka:{" "}
+          <ul>
+            <li>Menu: Baileys by Diego Nava</li>
+            <li>Pierwsza postać: A Game by Michael Ramir C</li>
+            <li></li>
           </ul>
         </li>
       </ol>
