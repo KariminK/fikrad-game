@@ -1,0 +1,17 @@
+.font-size-btn {
+  font-size: 26px;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: 3px solid rgb(120, 61, 197);
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+.font-size-btn:hover {
+  background-color: rgb(120, 61, 197);
+}
+#active {
+  background-color: rgb(120, 61, 197);
+}
