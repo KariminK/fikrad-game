@@ -5,7 +5,7 @@ import TeamView from "../../Scenes/Intro/TeamView";
 import backgroundMusic from "/src/assets/sounds/menuMusic.mp3";
 
 import { useState, useEffect } from "react";
-const Menu = ({ onPlayGame }) => {
+const Menu = ({ onPlayGame, onFontSelect }) => {
   const [currentView, setCurrentView] = useState(0);
   useEffect(() => {
     setTimeout(() => {
@@ -34,6 +34,7 @@ const Menu = ({ onPlayGame }) => {
             menuMusic.pause();
             onPlayGame();
           }}
+          onFontSelect={onFontSelect}
         />
       );
     default:

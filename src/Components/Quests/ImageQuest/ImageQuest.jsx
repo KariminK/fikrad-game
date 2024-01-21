@@ -3,7 +3,7 @@ import "./imageQuest.css";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox";
 import imageBase64 from "/src/data/image.txt";
 import { useState } from "react";
-const ImageQuest = () => {
+const ImageQuest = ({ nextQuest, onDie }) => {
   const [dialNum, setDialNum] = useState(0);
   const [answer, setAnswer] = useState("");
   const dialogs = [
@@ -25,7 +25,7 @@ const ImageQuest = () => {
         },
         {
           text: "Nie",
-          result: () => setDialNum(3),
+          result: () => onDie(),
         },
       ],
     },
@@ -48,6 +48,19 @@ const ImageQuest = () => {
       ],
     },
   ];
+
+  const textInputHandle = (e) => {
+    setAnswer(e.target.value);
+  };
+  const enterPressHandle = (e) => {
+    if (e.key === "Enter") {
+      if (answer.toLowerCase() === "kot") nextQuest();
+      else {
+        const wrongAnswerSound = new Audio(sound);
+        wrongAnswerSound.play();
+      }
+    }
+  };
   return (
     <div className="quest" id="ImageQuest">
       <DialogBox
@@ -56,6 +69,8 @@ const ImageQuest = () => {
         type={dialogs[dialNum].type ?? "normal"}
         text={dialogs[dialNum].text}
         options={dialogs[dialNum].option}
+        handleEnterPress={enterPressHandle}
+        handleTextInput={textInputHandle}
         attachmentsElements={dialogs[dialNum].attachments}
       />
     </div>

@@ -8,6 +8,7 @@ function App() {
   const playGameHandle = () => {
     setView(2);
   };
+  const [selectedFont, setSelectedFont] = useState("normal");
   const selectCharacterHandle = (e, characterNum) => {
     switch (characterNum) {
       case "I":
@@ -22,18 +23,47 @@ function App() {
     }
     setView(3);
   };
-  if (view === 0)
-    return (
-      <div id="launch">
-        <button id="launchBtn" onClick={() => setView(1)}>
-          Kliknij, żeby wystartować grę
-        </button>
-      </div>
-    );
-  else if (view === 1) return <Menu onPlayGame={playGameHandle} />;
-  else if (view === 2)
-    return <ChooseCharacter onChooseCharacter={selectCharacterHandle} />;
-  else if (view === 3) return <Game selectedCharacter={selectedCharacter} />;
+  const onFontSelect = (font) => {
+    console.log(font);
+    console.log("f-" + selectedFont);
+    switch (font) {
+      case "mała":
+        setSelectedFont("small");
+        break;
+      case "średnia":
+        setSelectedFont("medium");
+        break;
+      case "duża":
+        setSelectedFont("big");
+        break;
+    }
+  };
+  let currentView;
+  switch (view) {
+    case 0:
+      currentView = (
+        <div id="launch">
+          <button id="launchBtn" onClick={() => setView(1)}>
+            Kliknij, żeby wystartować grę
+          </button>
+        </div>
+      );
+      break;
+    case 1:
+      currentView = (
+        <Menu onPlayGame={playGameHandle} onFontSelect={onFontSelect} />
+      );
+      break;
+    case 2:
+      currentView = (
+        <ChooseCharacter onChooseCharacter={selectCharacterHandle} />
+      );
+      break;
+    case 3:
+      currentView = <Game selectedCharacter={selectedCharacter} />;
+      break;
+  }
+  return <div className={"f-" + selectedFont}>{currentView}</div>;
 }
 
 export default App;

@@ -37,8 +37,12 @@
   margin: 20px 0px;
   line-height: 50px;
 }
+.menuDialogBox h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
 .menuDialogBox h2 {
-  font-size: 48px;
+  font-size: 36px;
   text-align: center;
 }
 .menuDialogBox a {
@@ -47,6 +51,16 @@
 }
 .menuDialogBox a:hover {
   color: rgb(173, 113, 252);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fontSizes {
+  margin: 20px;
 }
 
 @keyframes shadeIn {

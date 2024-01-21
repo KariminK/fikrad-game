@@ -13,6 +13,9 @@ const CipherCharacter = ({ nick, onDie }) => {
 
   useEffect(() => {
     backgroundMusicSound.play();
+    backgroundMusicSound.addEventListener("ended", () =>
+      backgroundMusicSound.play()
+    );
     return () => backgroundMusicSound.pause();
   }, []);
 

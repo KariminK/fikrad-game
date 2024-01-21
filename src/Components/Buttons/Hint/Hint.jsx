@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import "./hint.css";
+import hoverSound from "/src/assets/sounds/hover.wav";
+import clickSound from "/src/assets/sounds/click.wav";
 const Hint = ({ text }) => {
   const [hidden, setHidden] = useState(true);
   const [timer, setTimer] = useState(false);
   const [seconds, setSeconds] = useState(20);
+  const hover = new Audio(hoverSound);
+  const click = new Audio(clickSound);
   useEffect(() => {
     if (timer) {
       const intervalID = setInterval(() => {
@@ -24,7 +28,11 @@ const Hint = ({ text }) => {
   };
   return (
     <li
-      onClick={hintClickHandle}
+      onClick={() => {
+        click.play();
+        hintClickHandle();
+      }}
+      onMouseEnter={() => hover.play()}
       className={
         "hint" +
         (hidden ? " hidden" : "") +

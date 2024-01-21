@@ -1,4 +1,7 @@
 import "./dialogBox.css";
+import hoverSound from "/src/assets/sounds/hover.wav";
+import clickSound from "/src/assets/sounds/click.wav";
+
 const DialogBox = ({
   dialNum = -1,
   speakingCharacter,
@@ -10,6 +13,8 @@ const DialogBox = ({
   type,
   text,
 }) => {
+  const hover = new Audio(hoverSound);
+  const click = new Audio(clickSound);
   return (
     <div className="dialogBox" id={`dialog${dialNum}`}>
       <div className="dial">
@@ -22,7 +27,15 @@ const DialogBox = ({
           options &&
           options.map((option, index) => {
             return (
-              <button className="option" onClick={option.result} key={index}>
+              <button
+                className="option"
+                onClick={() => {
+                  click.play();
+                  option.result();
+                }}
+                onMouseEnter={() => hover.play()}
+                key={index}
+              >
                 {option.text}
               </button>
             );

@@ -26,3 +26,21 @@ body {
   background-color: rgb(85, 3, 85);
   box-shadow: 0px 0px 50px rgb(85, 3, 85);
 }
+.f-big,
+.f-big p,
+.f-big li,
+.f-big button {
+  font-size: 48px !important;
+}
+.f-big h1 {
+  font-size: 96px !important;
+}
+.f-big h2 {
+  font-size: 72px !important;
+}
+.f-big,
+.f-small p,
+.f-small li,
+.f-small button {
+  font-size: 17px !important;
+}
