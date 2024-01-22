@@ -14,5 +14,29 @@
     "color": "#dc60dc",
     "title": "Kim jesteś?",
     "description": "Ustawiłeś swój nick"
+  },
+  {
+    "id": "PAPIEZ",
+    "isDone": 0,
+    "icon": "",
+    "color": "#ffe945",
+    "title": "Błogosławieństwo",
+    "description": "Świat staje się żółtszy"
+  },
+  {
+    "id": "FRASZKA",
+    "isDone": 0,
+    "icon": "",
+    "color": "#c4c3bb",
+    "title": "Opowiedzieć ci fraszkę?",
+    "description": "Lambert, Lambert, ty geniuszu!"
+  },
+  {
+    "id": "KOMMUNISTKOT",
+    "isDone": 0,
+    "icon": "",
+    "color": "#ff3c00",
+    "title": "Koci kryminalista",
+    "description": "Idziesz do kicia!"
   }
 ]

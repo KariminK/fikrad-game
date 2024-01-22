@@ -51,20 +51,24 @@ const Game = ({ selectedCharacter }) => {
         heading: "Miło cię poznać",
         icon: "",
       });
-      let newAchievements = JSON.parse(JSON.stringify(achievements)).map(
-        (achievement) => {
-          if (achievement.id === "SETTED_NICK") {
-            return { ...achievement, isDone: 1 };
-          } else {
-            return achievement;
-          }
-        }
-      );
-      setAchievements(newAchievements);
+      updateAchievements("SETTED_NICK");
     }
   };
   const handleAnswer = (text, nextDial, dialID) => {
     setDialNum(nextDial);
+  };
+  const updateAchievements = (name) => {
+    let newAchievements = JSON.parse(JSON.stringify(achievements)).map(
+      (achievement) => {
+        console.log(achievement);
+        if (achievement.id === name) {
+          return { ...achievement, isDone: 1 };
+        } else {
+          return achievement;
+        }
+      }
+    );
+    setAchievements(newAchievements);
   };
 
   switch (scene) {
@@ -106,7 +110,11 @@ const Game = ({ selectedCharacter }) => {
         <div className="game">
           <Clock onRunOutOfTime={() => setScene(3)} />
           <AchievementsButton onButtonClick={() => setShowAchievements(true)} />
-          <CipherCharacter nick={nick} onDie={() => setScene(3)} />
+          <CipherCharacter
+            nick={nick}
+            onDie={() => setScene(3)}
+            getAchievement={updateAchievements}
+          />
           {showAchievements && (
             <Achievements
               achievements={achievements}

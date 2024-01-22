@@ -1,5 +1,6 @@
 import "./achievements.css";
 const Achievements = ({ achievements, onAchievementsHide }) => {
+  console.log(achievements);
   const keyUpHandle = (e) => {
     if (e.key == "Escape") {
       onAchievementsHide();
@@ -10,7 +11,7 @@ const Achievements = ({ achievements, onAchievementsHide }) => {
       <h1>Osiągnięcia</h1>
       <ul>
         {achievements.length > 0
-          ? achievements.map((achievement) => {
+          ? achievements?.map((achievement) => {
               return (
                 <li
                   key={achievement.id}
@@ -21,9 +22,9 @@ const Achievements = ({ achievements, onAchievementsHide }) => {
                   }
                 >
                   {achievement.icon === "" ? (
-                    <span className="undefinedAchievementIcon">
-                      {achievement.isDone ? "!" : "?"}
-                    </span>
+                    <div className="undefinedAchievementIcon">
+                      <span>{achievement.isDone ? "!" : "?"}</span>
+                    </div>
                   ) : (
                     <img
                       src={achievement.icon}

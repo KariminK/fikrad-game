@@ -3,7 +3,7 @@ import "../quest.css";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox";
 import sound from "/src/assets/sounds/wrong answer.wav";
 import { useState } from "react";
-const CaesarQuest = ({ nick, nextQuest, onDie }) => {
+const CaesarQuest = ({ nick, nextQuest, onDie, getAchievement }) => {
   const [dialNum, setDialNum] = useState(0);
   const [answer, setAnswer] = useState("");
   const dialogs = [
@@ -58,8 +58,10 @@ const CaesarQuest = ({ nick, nextQuest, onDie }) => {
   const handleEnterPress = (e) => {
     console.log("enter was pressed");
     if (e.key === "Enter") {
-      if (answer.toLowerCase() === "wiedźmin") nextQuest();
-      else {
+      if (answer.toLowerCase() === "wiedźmin") {
+        nextQuest();
+        getAchievement("FRASZKA");
+      } else {
         const wrongAnswerSound = new Audio(sound);
         wrongAnswerSound.play();
       }

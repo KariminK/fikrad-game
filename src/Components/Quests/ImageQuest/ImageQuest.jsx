@@ -3,7 +3,7 @@ import "./imageQuest.css";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox";
 import imageBase64 from "/src/data/image.txt";
 import { useState } from "react";
-const ImageQuest = ({ nextQuest, onDie }) => {
+const ImageQuest = ({ nextQuest, onDie, getAchievement }) => {
   const [dialNum, setDialNum] = useState(0);
   const [answer, setAnswer] = useState("");
   const dialogs = [
@@ -54,8 +54,10 @@ const ImageQuest = ({ nextQuest, onDie }) => {
   };
   const enterPressHandle = (e) => {
     if (e.key === "Enter") {
-      if (answer.toLowerCase() === "kot") nextQuest();
-      else {
+      if (answer.toLowerCase() === "kot") {
+        nextQuest();
+        getAchievement("KOMMUNISTKOT");
+      } else {
         const wrongAnswerSound = new Audio(sound);
         wrongAnswerSound.play();
       }

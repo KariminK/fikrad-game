@@ -6,7 +6,7 @@ import AsyncAudio from "../../../helpers/asyncAudio";
 import punchSound from "/src/assets/sounds/punch.mp3";
 import ImageQuest from "../../Quests/ImageQuest/ImageQuest";
 import backgroundMusic from "/src/assets/sounds/cipherMusic.mp3";
-const CipherCharacter = ({ nick, onDie }) => {
+const CipherCharacter = ({ nick, onDie, getAchievement }) => {
   const backgroundMusicSound = new AsyncAudio(backgroundMusic);
   const [quest, setQuest] = useState(0);
   const hit = new AsyncAudio(punchSound);
@@ -24,9 +24,24 @@ const CipherCharacter = ({ nick, onDie }) => {
     setQuest(quest + 1);
   };
   const QUESTS = [
-    <RoomsQuest nick={nick} nextQuest={nextQuestHandle} onDie={onDie} />,
-    <CaesarQuest nick={nick} nextQuest={nextQuestHandle} onDie={onDie} />,
-    <ImageQuest nick={nick} nextQuest={nextQuestHandle} onDie={onDie} />,
+    <RoomsQuest
+      nick={nick}
+      nextQuest={nextQuestHandle}
+      onDie={onDie}
+      getAchievement={getAchievement}
+    />,
+    <CaesarQuest
+      nick={nick}
+      nextQuest={nextQuestHandle}
+      onDie={onDie}
+      getAchievement={getAchievement}
+    />,
+    <ImageQuest
+      nick={nick}
+      nextQuest={nextQuestHandle}
+      onDie={onDie}
+      getAchievement={getAchievement}
+    />,
   ];
   return <div id="cipherCharacter">{QUESTS[quest]}</div>;
 };
