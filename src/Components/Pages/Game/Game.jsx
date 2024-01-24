@@ -10,6 +10,8 @@ import Achievements from "../../Dialog Boxes/Achievements/Achievements";
 import Clock from "./Clock/Clock";
 import LoseScreen from "../../Scenes/LoseScreen/LoseScreen";
 import CipherCharacter from "../../Characters/cipherCharacter/CipherCharacter";
+import sound from "/src/assets/sounds/notification.wav";
+
 const Game = ({ selectedCharacter }) => {
   const [scene, setScene] = useState(0);
   const [dialNum, setDialNum] = useState(0);
@@ -60,8 +62,9 @@ const Game = ({ selectedCharacter }) => {
   const updateAchievements = (name) => {
     let newAchievements = JSON.parse(JSON.stringify(achievements)).map(
       (achievement) => {
-        console.log(achievement);
         if (achievement.id === name) {
+          const achievementSound = new Audio(sound);
+          achievementSound.play();
           return { ...achievement, isDone: 1 };
         } else {
           return achievement;

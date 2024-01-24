@@ -1,6 +1,5 @@
 import "./achievements.css";
 const Achievements = ({ achievements, onAchievementsHide }) => {
-  console.log(achievements);
   const keyUpHandle = (e) => {
     if (e.key == "Escape") {
       onAchievementsHide();

@@ -56,7 +56,6 @@ const CaesarQuest = ({ nick, nextQuest, onDie, getAchievement }) => {
     setAnswer(e.target.value);
   };
   const handleEnterPress = (e) => {
-    console.log("enter was pressed");
     if (e.key === "Enter") {
       if (answer.toLowerCase() === "wiedźmin") {
         nextQuest();
