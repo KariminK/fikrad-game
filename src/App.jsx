@@ -5,6 +5,19 @@ import ChooseCharacter from "./Components/Scenes/ChooseCharacter/ChooseCharacter
 function App() {
   const [view, setView] = useState(0);
   const [selectedCharacter, setSelectedCharacter] = useState(1);
+  const [characters, setCharacters] = useState([
+    {
+      name: "Marian Rejewski",
+      isDone: false,
+      img: "https://ipn.gov.pl/dokumenty/zalaczniki/1/1-811116.jpg",
+      link: "https://pl.wikipedia.org/wiki/Marian_Rejewski",
+    },
+    {
+      name: "Andrew kowalski",
+      isDone: false,
+      img: "https://ipn.gov.pl/dokumenty/zalaczniki/1/1-811116.jpg",
+    },
+  ]);
   const playGameHandle = () => {
     setView(2);
   };
@@ -38,6 +51,18 @@ function App() {
         break;
     }
   };
+  const characterEndHandle = (id) => {
+    let newCharacters = JSON.parse(JSON.stringify(characters));
+    newCharacters = newCharacters.map((character, index) => {
+      console.log(index);
+      if (index == id) return { ...character, isDone: true };
+      else return character;
+    });
+    console.log(id);
+    console.log(newCharacters);
+    setCharacters(newCharacters);
+    setView(2);
+  };
   let currentView;
   switch (view) {
     case 0:
@@ -56,11 +81,19 @@ function App() {
       break;
     case 2:
       currentView = (
-        <ChooseCharacter onChooseCharacter={selectCharacterHandle} />
+        <ChooseCharacter
+          onChooseCharacter={selectCharacterHandle}
+          characters={characters}
+        />
       );
       break;
     case 3:
-      currentView = <Game selectedCharacter={selectedCharacter} />;
+      currentView = (
+        <Game
+          selectedCharacter={selectedCharacter}
+          onCharacterEnd={characterEndHandle}
+        />
+      );
       break;
   }
   return <div className={"f-" + selectedFont}>{currentView}</div>;

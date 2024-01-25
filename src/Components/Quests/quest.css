@@ -4,11 +4,3 @@
   background-size: cover;
   animation: fadeInQuest 2s linear;
 }
-@keyframes fadeInQuest {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}

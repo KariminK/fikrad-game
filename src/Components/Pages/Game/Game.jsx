@@ -12,7 +12,7 @@ import LoseScreen from "../../Scenes/LoseScreen/LoseScreen";
 import CipherCharacter from "../../Characters/cipherCharacter/CipherCharacter";
 import sound from "/src/assets/sounds/notification.wav";
 
-const Game = ({ selectedCharacter }) => {
+const Game = ({ selectedCharacter, onCharacterEnd }) => {
   const [scene, setScene] = useState(0);
   const [dialNum, setDialNum] = useState(0);
   const [nick, setNick] = useState("");
@@ -117,6 +117,7 @@ const Game = ({ selectedCharacter }) => {
             nick={nick}
             onDie={() => setScene(3)}
             getAchievement={updateAchievements}
+            onCharacterEnd={() => onCharacterEnd(0)}
           />
           {showAchievements && (
             <Achievements

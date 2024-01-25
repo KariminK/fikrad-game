@@ -6,7 +6,7 @@ import AsyncAudio from "../../../helpers/asyncAudio";
 import punchSound from "/src/assets/sounds/punch.mp3";
 import ImageQuest from "../../Quests/ImageQuest/ImageQuest";
 import backgroundMusic from "/src/assets/sounds/cipherMusic.mp3";
-const CipherCharacter = ({ nick, onDie, getAchievement }) => {
+const CipherCharacter = ({ nick, onDie, getAchievement, onCharacterEnd }) => {
   const backgroundMusicSound = new AsyncAudio(backgroundMusic);
   const [quest, setQuest] = useState(0);
   const hit = new AsyncAudio(punchSound);
@@ -21,6 +21,7 @@ const CipherCharacter = ({ nick, onDie, getAchievement }) => {
 
   const nextQuestHandle = async () => {
     if (quest === 0) await hit.asyncPlay(200);
+    if (quest === 2) onCharacterEnd();
     setQuest(quest + 1);
   };
   const QUESTS = [

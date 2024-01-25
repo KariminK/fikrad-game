@@ -1,29 +1,20 @@
 import "./chooseCharacter.css";
 import Character from "../../Buttons/Character/Character";
-const ChooseCharacter = ({ onChooseCharacter }) => {
+const ChooseCharacter = ({ onChooseCharacter, characters }) => {
   return (
     <div className="chooseCharacter">
-      <Character
-        characterNum={"I"}
-        isDone={false}
-        characterIMG={""}
-        altMsg={"Rafał"}
-        onChooseCharacter={onChooseCharacter}
-      />
-      <Character
-        characterNum={"II"}
-        isDone={false}
-        characterIMG={""}
-        altMsg={"Andrzej"}
-        onChooseCharacter={onChooseCharacter}
-      />
-      <Character
-        characterNum={"III"}
-        isDone={false}
-        characterIMG={""}
-        altMsg={"Ryszard"}
-        onChooseCharacter={onChooseCharacter}
-      />
+      {characters.map((character, index) => {
+        return (
+          <Character
+            characterNum={index + 1}
+            isDone={character.isDone}
+            characterIMG={character.img}
+            altMsg={character.name}
+            onChooseCharacter={onChooseCharacter}
+            link={character.link}
+          />
+        );
+      })}
     </div>
   );
 };

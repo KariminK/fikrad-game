@@ -6,16 +6,20 @@ const Character = ({
   characterIMG,
   altMsg,
   onChooseCharacter,
+  link,
 }) => {
   const hover = new Audio(hoverSound);
   if (isDone) {
     return (
       <button
         className="character"
-        onClick={(e) => onChooseCharacter(e, characterNum)}
+        onClick={(e) => () => {
+          window.open(link, "_blank");
+        }}
         onMouseEnter={() => hover.play()}
       >
         <img src={characterIMG} alt={altMsg} />
+        {altMsg}
       </button>
     );
   } else {
