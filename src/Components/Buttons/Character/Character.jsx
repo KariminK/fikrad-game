@@ -13,9 +13,7 @@ const Character = ({
     return (
       <button
         className="character"
-        onClick={(e) => () => {
-          window.open(link, "_blank");
-        }}
+        onClick={(e) => window.open(link, "_blank")}
         onMouseEnter={() => hover.play()}
       >
         <img src={characterIMG} alt={altMsg} />
