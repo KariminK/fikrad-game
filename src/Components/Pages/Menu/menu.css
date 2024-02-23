@@ -19,7 +19,7 @@ body {
   animation: shadeIn 3100ms linear;
 }
 #competition {
-  background-image: url("src/assets/backgrounds/compBg.jpg");
+  background-image: url("/src/assets/backgrounds/compBg.jpg");
 }
 #team {
   background-image: url("/src/assets/backgrounds/teamMenuBg.png");

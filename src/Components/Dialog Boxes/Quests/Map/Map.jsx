@@ -1,4 +1,4 @@
-import mapImg from "/src/assets/misc/map.jpg";
+import mapImg from "/src/assets/misc/map.png";
 import React from "react";
 import ImageMapper from "react-img-mapper";
 import "./map.css";
@@ -10,11 +10,11 @@ const Map = ({ onCloseMap, onAreaClick }) => {
       {
         id: "21a3befd-c97b-476d-8e0c-7c98399988bf",
         title: "kitchen",
-        shape: "poly",
+        shape: "rect",
         name: "13",
         fillColor: "#00ff194c",
         strokeColor: "black",
-        coords: [126, 57, 166, 57, 195, 75, 195, 133, 127, 133],
+        coords: [60, 397, 260, 548],
       },
       {
         id: "21a3befd-c97b-476d-8e0c-",
@@ -23,16 +23,16 @@ const Map = ({ onCloseMap, onAreaClick }) => {
         name: "13",
         fillColor: "#FF0000A0",
         strokeColor: "black",
-        coords: [100, 400, 400, 600],
+        coords: [127, 80, 288, 255],
       },
       {
         id: "21a3befd-c97b",
         title: "basement",
         shape: "rect",
         name: "13",
-        fillColor: "#FF0000A0",
+        fillColor: "#11AAFFA0",
         strokeColor: "black",
-        coords: [438, 115, 515, 195],
+        coords: [294, 259, 395, 396],
       },
     ],
   };

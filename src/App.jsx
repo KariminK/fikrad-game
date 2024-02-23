@@ -12,11 +12,6 @@ function App() {
       img: "https://ipn.gov.pl/dokumenty/zalaczniki/1/1-811116.jpg",
       link: "https://pl.wikipedia.org/wiki/Marian_Rejewski",
     },
-    {
-      name: "Andrew kowalski",
-      isDone: false,
-      img: "https://ipn.gov.pl/dokumenty/zalaczniki/1/1-811116.jpg",
-    },
   ]);
   const playGameHandle = () => {
     setView(2);

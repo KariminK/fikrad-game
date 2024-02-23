@@ -2,6 +2,7 @@ import "../quest.css";
 import "./imageQuest.css";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox";
 import imageBase64 from "/src/data/image.txt";
+import sound from "/src/assets/sounds/wrong answer.wav";
 import { useState } from "react";
 const ImageQuest = ({ nextQuest, onDie, getAchievement }) => {
   const [dialNum, setDialNum] = useState(0);

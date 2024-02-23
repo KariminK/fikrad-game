@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DialogBox from "../../Dialog Boxes/Game/DialogBox";
+import AgentIMG from "/src/assets/backgrounds/fikradAgent.png";
 import "./introDialog.css";
 const IntroDialog = ({
   dial,
@@ -33,11 +34,7 @@ const IntroDialog = ({
   };
   return (
     <div className={`dialog ${type === "text" ? "dialog-text" : ""}`}>
-      <img
-        src="/src/assets/backgrounds/fikradAgent.png"
-        alt="agent"
-        id="agentIMG"
-      />
+      <img src={AgentIMG} alt="agent" id="agentIMG" />
       <DialogBox
         dialNum={dialNum}
         speakingCharacter={speakingCharacter}
