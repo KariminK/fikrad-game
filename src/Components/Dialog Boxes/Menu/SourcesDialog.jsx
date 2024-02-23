@@ -51,8 +51,7 @@ const SourcesDialog = ({ onCloseSources }) => {
           Muzyka:{" "}
           <ul>
             <li>Menu: Baileys by Diego Nava</li>
-            <li>Pierwsza postać: A Game by Michael Ramir C</li>
-            <li></li>
+            <li>Gra: A Game by Michael Ramir C</li>
           </ul>
         </li>
       </ol>

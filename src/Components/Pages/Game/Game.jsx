@@ -4,25 +4,16 @@ import Intro from "../../Scenes/Start game/Intro";
 import IntroDialog from "../../Scenes/IntroDialog/IntroDialog";
 import Notification from "../../Notification/Notification";
 import DIALOG_DATA from "../../../data/dialogs.json";
-import ACHIEVEMENTS_DATA from "../../../data/achievements.json";
-import AchievementsButton from "../../Buttons/Achievements button/AchievementsBtn";
-import Achievements from "../../Dialog Boxes/Achievements/Achievements";
+
 import Clock from "./Clock/Clock";
 import LoseScreen from "../../Scenes/LoseScreen/LoseScreen";
 import CipherCharacter from "../../Characters/cipherCharacter/CipherCharacter";
 import sound from "/src/assets/sounds/notification.wav";
 
-const Game = ({ selectedCharacter, onCharacterEnd }) => {
+const Game = ({ selectedCharacter, onCharacterEnd, updateAchievements }) => {
   const [scene, setScene] = useState(0);
   const [dialNum, setDialNum] = useState(0);
   const [nick, setNick] = useState("");
-  const [achievements, setAchievements] = useState(ACHIEVEMENTS_DATA);
-  const [showAchievements, setShowAchievements] = useState(false);
-  const [notification, setNotification] = useState({
-    text: "",
-    heading: "",
-    icon: "",
-  });
   const dialogs = DIALOG_DATA.map((dialog) => {
     let nextDial;
     if (dialog.type === "text") {
@@ -48,30 +39,11 @@ const Game = ({ selectedCharacter, onCharacterEnd }) => {
     if (dialID === "INSERT_NICK") {
       setNick(text);
       setDialNum(nextDial);
-      setNotification({
-        text: "Ustawiłeś swój nick",
-        heading: "Miło cię poznać",
-        icon: "",
-      });
       updateAchievements("SETTED_NICK");
     }
   };
   const handleAnswer = (text, nextDial, dialID) => {
     setDialNum(nextDial);
-  };
-  const updateAchievements = (name) => {
-    let newAchievements = JSON.parse(JSON.stringify(achievements)).map(
-      (achievement) => {
-        if (achievement.id === name) {
-          const achievementSound = new Audio(sound);
-          achievementSound.play();
-          return { ...achievement, isDone: 1 };
-        } else {
-          return achievement;
-        }
-      }
-    );
-    setAchievements(newAchievements);
   };
 
   switch (scene) {
@@ -80,14 +52,6 @@ const Game = ({ selectedCharacter, onCharacterEnd }) => {
     case 1:
       return (
         <>
-          <AchievementsButton onButtonClick={() => setShowAchievements(true)} />
-          {showAchievements && (
-            <Achievements
-              achievements={achievements}
-              onAchievementsHide={() => setShowAchievements(false)}
-            />
-          )}
-
           <IntroDialog
             dial={currentDialog}
             onNonNeutralAnswer={handleAnswer}
@@ -95,46 +59,18 @@ const Game = ({ selectedCharacter, onCharacterEnd }) => {
             nick={nick}
             dialNum={dialNum}
           />
-
-          {notification.text !== "" && (
-            <Notification
-              text={notification.text}
-              heading={notification.heading}
-              icon={notification.icon}
-              onNotificationHide={() =>
-                setNotification({ text: "", heading: "", icon: "" })
-              }
-            />
-          )}
         </>
       );
     case 2:
       return (
         <div className="game">
           <Clock onRunOutOfTime={() => setScene(3)} />
-          <AchievementsButton onButtonClick={() => setShowAchievements(true)} />
           <CipherCharacter
             nick={nick}
             onDie={() => setScene(3)}
             getAchievement={updateAchievements}
             onCharacterEnd={() => onCharacterEnd(0)}
           />
-          {showAchievements && (
-            <Achievements
-              achievements={achievements}
-              onAchievementsHide={() => setShowAchievements(false)}
-            />
-          )}
-          {notification.text !== "" && (
-            <Notification
-              text={notification.text}
-              heading={notification.heading}
-              icon={notification.icon}
-              onNotificationHide={() =>
-                setNotification({ text: "", heading: "", icon: "" })
-              }
-            />
-          )}
         </div>
       );
     case 3:

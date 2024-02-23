@@ -13,11 +13,21 @@ const RulesDialog = ({ onCloseRules }) => {
           <button onClick={fullScreenHandle}>Włącz pełny ekran</button>{" "}
           (polepszy to doświadczenie z gry){" "}
         </li>
-        <li>graj uczciwie</li>
+        <li>Klikaj ostrożnie, niektóre przedmioty mogą okazać się zdradliwe</li>
+        <li>Uważnie podejmuj decyzje</li>
+        <li>Możesz zmienić rozmiar czcionki w ustawieniach w menu gry</li>
         <li>
-          daj diaksa na <a href="minecraftmapy.pl">minecraftmapy.pl</a>
+          Gra wymaga korzystania z wiedzy dostępnej w internecie oraz różnych
+          zewnętrznych stron internetowych
         </li>
-        <li>baw się dobrze :D</li>
+        <li>Baw się dobrze!</li>
+        <li>
+          PS: przydatny{" "}
+          <a href="https://calcoolator.pl/szyfr-cezara.html" target="_blank">
+            link
+          </a>{" "}
+          ;&#93;
+        </li>
       </ol>
       <MenuButton text={"Zamknij"} onButtonClick={onCloseRules} />
     </div>

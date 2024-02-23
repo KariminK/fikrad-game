@@ -12,6 +12,7 @@ const ChooseCharacter = ({ onChooseCharacter, characters }) => {
             altMsg={character.name}
             onChooseCharacter={onChooseCharacter}
             link={character.link}
+            key={index}
           />
         );
       })}
